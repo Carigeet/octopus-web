@@ -1,0 +1,151 @@
+[
+  {
+    "id": "prod-1",
+    "slug": "countertop-blender",
+    "name": "Octopus Countertop Blender",
+    "category": "kitchen",
+    "shortDescription": "Crushes ice and frozen fruit to silky-smooth in seconds. 1500W motor, 7 preset programs, pulse for manual control. Cleans itself in one touch.",
+    "image": "/images/products/blender.png",
+    "bestSeller": true,
+    "colours": ["#111827", "#E5E7EB"],
+    "features": [
+      {
+        "title": "Smart Torque Technology",
+        "description": "Maintains blade speed under heavy loads without stalling or overheating."
+      },
+      {
+        "title": "Self-Cleaning Cycle",
+        "description": "Add warm water and a drop of dish soap to run a 60-second automatic clean."
+      },
+      {
+        "title": "Aircraft-Grade Blades",
+        "description": "Laser-cut stainless steel blades designed to pulverize tough cell walls."
+      },
+      {
+        "title": "Variable Speed Dial",
+        "description": "10-speed precision control combined with dedicated pulse and smoothie presets."
+      }
+    ],
+    "specs": [
+      {
+        "title": "Technical specifications",
+        "items": [
+          "Power: 1500W",
+          "Voltage: 220-240V ~ 50/60Hz",
+          "Motor: High-torque brushless motor",
+          "Blade Type: 6-blade hardened stainless steel",
+          "Preset Modes: 7 (Smoothie, Ice Crush, Puree, Soup, Clean, Nut Butter, Pulse)",
+          "Control: Digital LED display with dial ring"
+        ]
+      },
+      {
+        "title": "Dimensions & weight",
+        "items": [
+          "Height: 43.5 cm",
+          "Width: 20.0 cm",
+          "Depth: 22.5 cm",
+          "Weight: 4.2 kg",
+          "Cable length: 1.1 m"
+        ]
+      },
+      {
+        "title": "Product information",
+        "items": [
+          "Capacity: 1.8L Tritan jar (BPA-free)",
+          "Dishwasher safe parts (Jar, lid, tamper)",
+          "Overload and overheat protection system",
+          "Warranty: 2-year limited manufacturer warranty"
+        ]
+      },
+      {
+        "title": "Downloads",
+        "items": [
+          "Octopus Countertop Blender User Manual (PDF)",
+          "Quick Start & Recipe Guide (PDF)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "prod-2",
+    "slug": "ionic-hair-dryer",
+    "name": "Octopus Ionic Hair Dryer",
+    "category": "hair-care",
+    "shortDescription": "Dry your hair faster and with less frizz with this powerful ionic hair dryer and smart heat control.",
+    "image": "/images/products/hair-dryer.png",
+    "bestSeller": true,
+    "colours": ["#1F2937", "#B45309"]
+  },
+  {
+    "id": "prod-3",
+    "slug": "kettle-1-7l",
+    "name": "Octopus Kettle 1.7 L",
+    "category": "kitchen",
+    "shortDescription": "A 1.7 L kettle that boils fast on 1800W, with a double-wall cool-touch body.",
+    "image": "/images/products/kettle.png",
+    "bestSeller": true
+  },
+  {
+    "id": "prod-4",
+    "slug": "air-fryer-5-7l",
+    "name": "Octopus Air Fryer 5.7 L",
+    "category": "kitchen",
+    "shortDescription": "A 5.7 L air fryer that cooks a full family meal quickly and evenly with 2200W dual heaters.",
+    "image": "/images/products/air-fryer.png",
+    "bestSeller": true
+  },
+  {
+    "id": "prod-5",
+    "slug": "indoor-camera",
+    "name": "Octopus Indoor Camera",
+    "category": "home-security",
+    "shortDescription": "A 2K indoor camera that pans to cover the whole room and tracks movement as it happens.",
+    "image": "/images/products/indoor-cam.png",
+    "bestSeller": true
+  },
+  {
+    "id": "prod-6",
+    "slug": "outdoor-camera",
+    "name": "Octopus Outdoor Camera",
+    "category": "home-security",
+    "shortDescription": "Solar-powered weatherproof outdoor camera with color night vision and spotlight.",
+    "image": "/images/products/outdoor-cam.png",
+    "bestSeller": false
+  },
+  {
+    "id": "prod-7",
+    "slug": "video-doorbell",
+    "name": "Octopus Video Doorbell",
+    "category": "home-security",
+    "shortDescription": "2K HDR video doorbell with head-to-toe field of view and real-time two-way talk.",
+    "image": "/images/products/doorbell.png",
+    "bestSeller": false
+  },
+  {
+    "id": "prod-8",
+    "slug": "power-bank-10000",
+    "name": "Octopus Power Bank 10,000 mAh",
+    "category": "accessories",
+    "shortDescription": "A pocket-sized 10,000 mAh power bank with integrated USB-C cable.",
+    "image": "/images/products/powerbank.png",
+    "bestSeller": true
+  },
+  {
+    "id": "prod-9",
+    "slug": "power-board-usb",
+    "name": "Octopus Power Board with USB",
+    "category": "accessories",
+    "shortDescription": "Compact power board with 4 surge-protected sockets and 30W USB-C PD fast charging.",
+    "image": "/images/products/powerboard.png",
+    "bestSeller": false
+  },
+  {
+    "id": "prod-10",
+    "slug": "magnetic-charging-station",
+    "name": "Octopus 3-in-1 Magnetic Station",
+    "category": "accessories",
+    "shortDescription": "Foldable Qi2 wireless charging stand for phone, watch, and earbuds simultaneously.",
+    "image": "/images/products/charger.png",
+    "bestSeller": false
+  }
+]

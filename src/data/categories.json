@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "kitchen",
+    "name": "Kitchen",
+    "shortDescription": "Powerful appliances for everyday cooking.",
+    "featuredProductSlug": "kettle-1-7l",
+    "secondaryProductSlugs": ["countertop-blender", "air-fryer-5-7l"],
+    "image": "/images/categories/kitchen.png"
+  },
+  {
+    "slug": "hair-care",
+    "name": "Hair Care",
+    "shortDescription": "Salon-quality styling and drying powered by ionic technology.",
+    "featuredProductSlug": "ionic-hair-dryer",
+    "secondaryProductSlugs": [],
+    "image": "/images/categories/hair-care.png"
+  },
+  {
+    "slug": "home-security",
+    "name": "Home Security",
+    "shortDescription": "Smart cameras and sensors to keep your home safe and connected.",
+    "featuredProductSlug": "indoor-camera",
+    "secondaryProductSlugs": ["outdoor-camera", "video-doorbell"],
+    "image": "/images/categories/home-security.png"
+  },
+  {
+    "slug": "accessories",
+    "name": "Accessories",
+    "shortDescription": "The little things that make everything work better.",
+    "featuredProductSlug": "power-bank-10000",
+    "secondaryProductSlugs": ["power-board-usb", "magnetic-charging-station"],
+    "image": "/images/categories/accessories.png"
+  }
+]
