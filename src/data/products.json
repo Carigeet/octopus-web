@@ -4,8 +4,8 @@
     "slug": "countertop-blender",
     "name": "Octopus Countertop Blender",
     "category": "kitchen",
-    "shortDescription": "Crushes ice and frozen fruit to silky-smooth in seconds. 1500W motor, 7 preset programs, pulse for manual control. Cleans itself in one touch.",
-    "image": "/images/products/blender.png",
+    "shortDescription": "A powerful blender that crushes ice and blends smooth with seven presets",
+    "image": "/images/products/countertop-blender.png",
     "bestSeller": true,
     "colours": ["#111827", "#E5E7EB"],
     "features": [
@@ -71,8 +71,8 @@
     "slug": "ionic-hair-dryer",
     "name": "Octopus Ionic Hair Dryer",
     "category": "hair-care",
-    "shortDescription": "Dry your hair faster and with less frizz with this powerful ionic hair dryer and smart heat control.",
-    "image": "/images/products/hair-dryer.png",
+    "shortDescription": "Dry your hair faster and with less frizz with this powerful ionic hair dryer",
+    "image": "/images/banners/hero-hair-dryer.png",
     "bestSeller": true,
     "colours": ["#1F2937", "#B45309"]
   },
@@ -81,8 +81,8 @@
     "slug": "kettle-1-7l",
     "name": "Octopus Kettle 1.7 L",
     "category": "kitchen",
-    "shortDescription": "A 1.7 L kettle that boils fast on 1800W, with a double-wall cool-touch body.",
-    "image": "/images/products/kettle.png",
+    "shortDescription": "A 1.7 L kettle that boils fast on 1800W, with a body that stays cool to the touch",
+    "image": "/images/products/kettle-lifestyle.png",
     "bestSeller": true
   },
   {
@@ -90,7 +90,7 @@
     "slug": "air-fryer-5-7l",
     "name": "Octopus Air Fryer 5.7 L",
     "category": "kitchen",
-    "shortDescription": "A 5.7 L air fryer that cooks a full family meal quickly and evenly with 2200W dual heaters.",
+    "shortDescription": "A 5.7 L air fryer that cooks meals quickly and evenly, with 2200W and dual heaters",
     "image": "/images/products/air-fryer.png",
     "bestSeller": true
   },
@@ -99,8 +99,8 @@
     "slug": "indoor-camera",
     "name": "Octopus Indoor Camera",
     "category": "home-security",
-    "shortDescription": "A 2K indoor camera that pans to cover the whole room and tracks movement as it happens.",
-    "image": "/images/products/indoor-cam.png",
+    "shortDescription": "A 2K indoor camera that pans to cover the whole room and tracks movement as it happens",
+    "image": "/images/products/indoor-cam-shelf.png",
     "bestSeller": true
   },
   {
@@ -108,7 +108,7 @@
     "slug": "outdoor-camera",
     "name": "Octopus Outdoor Camera",
     "category": "home-security",
-    "shortDescription": "Solar-powered weatherproof outdoor camera with color night vision and spotlight.",
+    "shortDescription": "An outdoor camera that runs on solar power and records in 3K",
     "image": "/images/products/outdoor-cam.png",
     "bestSeller": false
   },
@@ -117,7 +117,7 @@
     "slug": "video-doorbell",
     "name": "Octopus Video Doorbell",
     "category": "home-security",
-    "shortDescription": "2K HDR video doorbell with head-to-toe field of view and real-time two-way talk.",
+    "shortDescription": "A 2K video doorbell that lets you answer from your phone",
     "image": "/images/products/doorbell.png",
     "bestSeller": false
   },
@@ -126,26 +126,35 @@
     "slug": "power-bank-10000",
     "name": "Octopus Power Bank 10,000 mAh",
     "category": "accessories",
-    "shortDescription": "A pocket-sized 10,000 mAh power bank with integrated USB-C cable.",
+    "shortDescription": "A slim power bank with the USB-C cable already built in",
     "image": "/images/products/powerbank.png",
     "bestSeller": true
   },
   {
     "id": "prod-9",
     "slug": "power-board-usb",
-    "name": "Octopus Power Board with USB",
+    "name": "Octopus Power Board with USB Charging",
     "category": "accessories",
-    "shortDescription": "Compact power board with 4 surge-protected sockets and 30W USB-C PD fast charging.",
+    "shortDescription": "A compact power board with four sockets and four USB ports",
     "image": "/images/products/powerboard.png",
     "bestSeller": false
   },
   {
     "id": "prod-10",
     "slug": "magnetic-charging-station",
-    "name": "Octopus 3-in-1 Magnetic Station",
+    "name": "Octopus 3-in-1 Magnetic Charging Station",
     "category": "accessories",
-    "shortDescription": "Foldable Qi2 wireless charging stand for phone, watch, and earbuds simultaneously.",
+    "shortDescription": "A Qi2 stand that charges your phone, watch and earbuds at the same time",
     "image": "/images/products/charger.png",
     "bestSeller": false
+  },
+  {
+    "id": "prod-11",
+    "slug": "portable-blender",
+    "name": "Octopus Blender",
+    "category": "kitchen",
+    "shortDescription": "A portable blender that blends straight into a cup you can take with you",
+    "image": "/images/products/blender.png",
+    "bestSeller": true
   }
 ]
