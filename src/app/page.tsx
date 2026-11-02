@@ -5,7 +5,7 @@ import {
   getCategories,
 } from "@/lib/products";
 import { Hero } from "@/components/home/Hero";
-import { Carousel } from "@/components/shared/Carousel";
+import { BestSellers } from "@/components/home/BestSellers";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { ProductCard } from "@/components/shared/ProductCard";
 import { HairCareBanner } from "@/components/home/HairCareBanner";
@@ -52,12 +52,7 @@ export default async function Home() {
       <Hero />
 
       {/* 2. Best Sellers Section with Horizontal Carousel (da 1.png) */}
-      <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 pt-14 sm:pt-20 pb-8 sm:pb-12">
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-dark mb-6 sm:mb-8">
-          Best sellers
-        </h2>
-        <Carousel products={bestSellers} cardVariant="horizontal" />
-      </section>
+      <BestSellers products={bestSellers} />
 
       {/* 3. Kitchen Bento Grid Section (da 1.png & 2.png) */}
       <section id="kitchen" className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 py-8 sm:py-12">
@@ -73,7 +68,7 @@ export default async function Home() {
           {kettle && (
             <ProductCard
               product={kettle}
-              variant="featured"
+              variant="large"
               priority={false}
             />
           )}
@@ -83,13 +78,13 @@ export default async function Home() {
             {portableBlender && (
               <ProductCard
                 product={portableBlender}
-                variant="vertical"
+                variant="medium-vertical"
               />
             )}
             {countertopBlender && (
               <ProductCard
                 product={countertopBlender}
-                variant="vertical"
+                variant="medium-vertical"
               />
             )}
           </div>
@@ -116,7 +111,7 @@ export default async function Home() {
             {indoorCam && (
               <ProductCard
                 product={indoorCam}
-                variant="featured"
+                variant="medium-vertical"
                 className="h-full"
               />
             )}
@@ -127,14 +122,14 @@ export default async function Home() {
             {outdoorCam && (
               <ProductCard
                 product={outdoorCam}
-                variant="horizontal"
+                variant="medium-horizontal"
                 className="flex-1"
               />
             )}
             {doorbell && (
               <ProductCard
                 product={doorbell}
-                variant="horizontal"
+                variant="medium-horizontal"
                 className="flex-1"
               />
             )}
@@ -155,19 +150,19 @@ export default async function Home() {
           {powerBank && (
             <ProductCard
               product={powerBank}
-              variant="vertical"
+              variant="small"
             />
           )}
           {powerBoard && (
             <ProductCard
               product={powerBoard}
-              variant="vertical"
+              variant="small"
             />
           )}
           {magneticStation && (
             <ProductCard
               product={magneticStation}
-              variant="vertical"
+              variant="small"
             />
           )}
         </div>

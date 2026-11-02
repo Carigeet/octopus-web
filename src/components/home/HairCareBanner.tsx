@@ -38,7 +38,7 @@ export function HairCareBanner({ product }: HairCareBannerProps) {
         {/* Right Lifestyle Image */}
         <div className="relative w-full md:w-7/12 min-h-[300px] sm:min-h-[380px] md:min-h-[460px] overflow-hidden">
           <Image
-            src="/images/banners/hero-hair-dryer.png"
+            src="/images/banners/placeholder-1600x900.png"
             alt={title}
             fill
             sizes="(min-width: 1200px) 58vw, (min-width: 810px) 50vw, 100vw"
@@ -51,4 +51,3 @@ export function HairCareBanner({ product }: HairCareBannerProps) {
 }
 
 export default HairCareBanner;
-

@@ -33,7 +33,7 @@ export function StoreBanner() {
         {/* Right Column: Products Display */}
         <div className="relative w-full md:w-7/12 min-h-[260px] sm:min-h-[340px] md:min-h-[380px] flex items-center justify-center">
           <Image
-            src="/images/banners/warehouse.png"
+            src="/images/banners/placeholder-2400x1200.png"
             alt="Octopus kitchen appliances available at The Warehouse"
             fill
             sizes="(min-width: 1200px) 50vw, (min-width: 810px) 50vw, 100vw"

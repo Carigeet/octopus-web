@@ -2,18 +2,18 @@
 
 import React, { useRef, useState, useEffect, useCallback } from "react";
 import { Product } from "@/types/product";
-import { ProductCard } from "@/components/shared/ProductCard";
+import { ProductCard, ProductCardVariant } from "@/components/shared/ProductCard";
 
 export interface CarouselProps {
   products: Product[];
   className?: string;
-  cardVariant?: "horizontal" | "vertical";
+  cardVariant?: ProductCardVariant;
 }
 
 export function Carousel({
   products,
   className = "",
-  cardVariant = "horizontal",
+  cardVariant = "bestseller",
 }: CarouselProps) {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
@@ -73,23 +73,19 @@ export function Carousel({
       className={`relative w-full ${className}`.trim()}
       onKeyDown={handleKeyDown}
       role="region"
-      aria-label="Product Carousel"
+      aria-label="Best Sellers Product Carousel"
     >
       {/* Scrollable Track */}
       <div
         ref={scrollRef}
         tabIndex={0}
         aria-label="Scrollable list of best seller products"
-        className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 outline-none focus-visible:ring-2 focus-visible:ring-black rounded-3xl [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        className="flex gap-[24px] overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 outline-none focus-visible:ring-2 focus-visible:ring-black [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden pl-[max(16px,calc(50%-160px))] pr-[max(16px,calc(50%-160px))] min-[810px]:pl-[calc(50%-344px)] min-[810px]:pr-[calc(50%-344px)] min-[1200px]:pl-[calc(50%-524px)] min-[1200px]:pr-[calc(50%-524px)]"
       >
         {products.map((product, idx) => (
           <div
             key={product.id || product.slug}
-            className={`shrink-0 snap-start ${
-              cardVariant === "horizontal"
-                ? "w-[85vw] sm:w-[580px] md:w-[640px] lg:w-[680px]"
-                : "w-[75vw] sm:w-[320px] md:w-[360px]"
-            }`}
+            className="w-[320px] min-[810px]:w-[688px] min-[1200px]:w-[1048px] shrink-0 snap-center flex justify-center"
           >
             <ProductCard
               product={product}
@@ -100,8 +96,8 @@ export function Carousel({
         ))}
       </div>
 
-      {/* Navigation Controls (Bottom Right as per 1.png) */}
-      <div className="flex items-center justify-end gap-3 pt-4 sm:pt-6">
+      {/* Navigation Controls (Bottom Right as per Figma) */}
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 flex items-center justify-end gap-3 pt-4 sm:pt-6">
         <button
           type="button"
           onClick={scrollPrev}
@@ -149,4 +145,3 @@ export function Carousel({
 }
 
 export default Carousel;
-

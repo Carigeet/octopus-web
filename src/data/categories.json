@@ -5,7 +5,7 @@
     "shortDescription": "Powerful appliances for everyday cooking",
     "featuredProductSlug": "kettle-1-7l",
     "secondaryProductSlugs": ["portable-blender", "countertop-blender"],
-    "image": "/images/products/blender.png"
+    "image": "/images/categories/placeholder-600x600.png"
   },
   {
     "slug": "home-security",
@@ -13,7 +13,7 @@
     "shortDescription": "Home feels safer when you're always in the loop",
     "featuredProductSlug": "indoor-camera",
     "secondaryProductSlugs": ["outdoor-camera", "video-doorbell"],
-    "image": "/images/products/indoor-cam.png"
+    "image": "/images/categories/placeholder-600x600.png"
   },
   {
     "slug": "hair-care",
@@ -21,7 +21,7 @@
     "shortDescription": "Salon-quality hair. At home, in minutes.",
     "featuredProductSlug": "ionic-hair-dryer",
     "secondaryProductSlugs": [],
-    "image": "/images/products/hair-dryer.png"
+    "image": "/images/categories/placeholder-600x600.png"
   },
   {
     "slug": "accessories",
@@ -29,6 +29,6 @@
     "shortDescription": "The little things that make everything work better",
     "featuredProductSlug": "power-bank-10000",
     "secondaryProductSlugs": ["power-board-usb", "magnetic-charging-station"],
-    "image": "/images/products/charger.png"
+    "image": "/images/categories/placeholder-600x600.png"
   }
 ]
