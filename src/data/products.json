@@ -5,25 +5,33 @@
     "name": "Octopus Countertop Blender",
     "category": "kitchen",
     "shortDescription": "A powerful blender that crushes ice and blends smooth with seven presets",
-    "image": "/images/products/placeholder-800x800.png",
+    "description": "The Octopus Countertop Blender has the power for daily smoothies and tougher jobs alike. A 1500W motor and seven presets handle most of the work, and a one-touch clean cycle rinses the jug so you do not have to.",
+    "image": "/images/products/countertop-blender.png",
     "bestSeller": true,
-    "colours": ["#111827", "#E5E7EB"],
+    "colours": [
+      "#111827",
+      "#E5E7EB"
+    ],
     "features": [
       {
-        "title": "Smart Torque Technology",
-        "description": "Maintains blade speed under heavy loads without stalling or overheating."
+        "title": "Powers through the tough stuff",
+        "description": "A 1500W motor lets you do anything from crushing ice to blending smoothies",
+        "image": "/images/products/blender-feature-tough.png"
       },
       {
-        "title": "Self-Cleaning Cycle",
-        "description": "Add warm water and a drop of dish soap to run a 60-second automatic clean."
+        "title": "Skip the scrubbing",
+        "description": "Add water and a little detergent, press clean, and the blender cleans itself",
+        "image": "/images/products/blender-feature-clean.png"
       },
       {
-        "title": "Aircraft-Grade Blades",
-        "description": "Laser-cut stainless steel blades designed to pulverize tough cell walls."
+        "title": "Control in short bursts",
+        "description": "The pulse function runs the blades in bursts, giving you even more control",
+        "image": "/images/products/blender-feature-bursts.png"
       },
       {
-        "title": "Variable Speed Dial",
-        "description": "10-speed precision control combined with dedicated pulse and smoothie presets."
+        "title": "A preset for the everyday",
+        "description": "Seven intelligent presets for smoothies, soups, pur\u00e9es & more",
+        "image": "/images/products/blender-feature-presets.png"
       }
     ],
     "specs": [
@@ -31,7 +39,8 @@
         "title": "Technical specifications",
         "items": [
           "Power: 1500W",
-          "Voltage: 220-240V ~ 50/60Hz",
+          "Voltage: 220\u2013240 V",
+          "Frequency: 50/60 Hz",
           "Motor: High-torque brushless motor",
           "Blade Type: 6-blade hardened stainless steel",
           "Preset Modes: 7 (Smoothie, Ice Crush, Puree, Soup, Clean, Nut Butter, Pulse)",
@@ -56,15 +65,12 @@
           "Overload and overheat protection system",
           "Warranty: 2-year limited manufacturer warranty"
         ]
-      },
-      {
-        "title": "Downloads",
-        "items": [
-          "Octopus Countertop Blender User Manual (PDF)",
-          "Quick Start & Recipe Guide (PDF)"
-        ]
       }
-    ]
+    ],
+    "lifestyleImages": {
+      "top": "/images/products/blender-lifestyle-1.png",
+      "bottom": "/images/products/blender-lifestyle-2.png"
+    }
   },
   {
     "id": "prod-2",
@@ -72,9 +78,72 @@
     "name": "Octopus Ionic Hair Dryer",
     "category": "hair-care",
     "shortDescription": "Dry your hair faster and with less frizz with this powerful ionic hair dryer",
-    "image": "/images/products/placeholder-800x800.png",
+    "description": "Engineered for rapid drying with zero heat damage. Powered by a 110,000 RPM high-speed digital motor producing 200 million negative ions for silky, frizz-free salon results.",
+    "image": "/images/products/hair-dryer.png",
     "bestSeller": true,
-    "colours": ["#1F2937", "#B45309"]
+    "colours": [
+      "#1F2937",
+      "#B45309",
+      "#E5E7EB"
+    ],
+    "features": [
+      {
+        "title": "110,000 RPM High-Speed Motor",
+        "description": "Generates a concentrated 22 m/s airflow that dries hair in half the time without extreme heat",
+        "image": "/images/banners/hero-macro.png"
+      },
+      {
+        "title": "200M Negative Ion Generator",
+        "description": "Eliminates static, seals the hair cuticle, and locks in natural moisture for ultimate shine",
+        "image": "/images/banners/hair-dryer-banner.png"
+      },
+      {
+        "title": "Intelligent Heat Sensor",
+        "description": "Measures air temperature 100 times per second to prevent heat damage and preserve color",
+        "image": "/images/products/hair-dryer.png"
+      },
+      {
+        "title": "Magnetic 360\u00b0 Styling Nozzles",
+        "description": "Quick-snap concentrator and diffuser attachments for precision styling and natural curls",
+        "image": "/images/banners/hero-macro.png"
+      }
+    ],
+    "specs": [
+      {
+        "title": "Technical specifications",
+        "items": [
+          "Power: 1600W",
+          "Voltage: 220\u2013240 V",
+          "Motor Speed: 110,000 RPM high-speed brushless",
+          "Noise Level: Under 59 dB at full power",
+          "Heat Settings: 4 levels (Cool, 60\u00b0C, 80\u00b0C, 100\u00b0C)",
+          "Airflow Speed: 3 selectable speeds"
+        ]
+      },
+      {
+        "title": "Dimensions & weight",
+        "items": [
+          "Height: 27.5 cm",
+          "Width: 9.0 cm",
+          "Depth: 7.2 cm",
+          "Weight: 460 g",
+          "Cable length: 2.8 m salon-grade"
+        ]
+      },
+      {
+        "title": "Product information",
+        "items": [
+          "Ceramic and Tourmaline air grille",
+          "Washable magnetic air intake filter",
+          "Overheat auto shut-off protection",
+          "Warranty: 2-year limited manufacturer warranty"
+        ]
+      }
+    ],
+    "lifestyleImages": {
+      "top": "/images/banners/hair-dryer-banner.png",
+      "bottom": "/images/banners/hero-macro.png"
+    }
   },
   {
     "id": "prod-3",
@@ -82,8 +151,70 @@
     "name": "Octopus Kettle 1.7 L",
     "category": "kitchen",
     "shortDescription": "A 1.7 L kettle that boils fast on 1800W, with a body that stays cool to the touch",
-    "image": "/images/products/placeholder-1200x800.png",
-    "bestSeller": true
+    "description": "A 1.7 L electric kettle that boils fast with 1800W of precision power. Engineered with cool-touch double-wall insulation to keep water hot while remaining completely safe to touch.",
+    "image": "/images/products/kettle.png",
+    "bestSeller": true,
+    "colours": [
+      "#111827",
+      "#E5E7EB"
+    ],
+    "features": [
+      {
+        "title": "Rapid 1800W Fast Boil",
+        "description": "Brings 1.7 liters of water to a rolling boil in under 4 minutes with quiet heating technology",
+        "image": "/images/products/kettle.png"
+      },
+      {
+        "title": "Cool-Touch Double Wall",
+        "description": "Stainless steel interior surrounded by an insulated outer layer that stays cool to the touch",
+        "image": "/images/banners/warehouse.png"
+      },
+      {
+        "title": "One-Touch Push-Button Lid",
+        "description": "Soft-opening wide-mouth lid prevents steam splatter and makes refilling effortless",
+        "image": "/images/products/kettle.png"
+      },
+      {
+        "title": "Automatic Shut-Off & Boil-Dry",
+        "description": "Integrated Strix thermostat controller automatically shuts off once water boils or if empty",
+        "image": "/images/categories/kitchen-banner.png"
+      }
+    ],
+    "specs": [
+      {
+        "title": "Technical specifications",
+        "items": [
+          "Capacity: 1.7 Liters",
+          "Power: 1800W",
+          "Voltage: 220\u2013240 V ~ 50/60Hz",
+          "Controller: British Strix internal thermostat",
+          "Base: 360\u00b0 cordless swivel base with cord storage"
+        ]
+      },
+      {
+        "title": "Dimensions & weight",
+        "items": [
+          "Height: 24.5 cm",
+          "Width: 16.0 cm",
+          "Depth: 21.0 cm",
+          "Weight: 1.1 kg",
+          "Cable length: 0.8 m"
+        ]
+      },
+      {
+        "title": "Product information",
+        "items": [
+          "304 Food-grade seamless stainless steel interior",
+          "BPA-free cool-touch polymer exterior",
+          "Removable scale filter for easy cleaning",
+          "Warranty: 2-year limited manufacturer warranty"
+        ]
+      }
+    ],
+    "lifestyleImages": {
+      "top": "/images/categories/kitchen-banner.png",
+      "bottom": "/images/banners/warehouse.png"
+    }
   },
   {
     "id": "prod-4",
@@ -91,8 +222,70 @@
     "name": "Octopus Air Fryer 5.7 L",
     "category": "kitchen",
     "shortDescription": "A 5.7 L air fryer that cooks meals quickly and evenly, with 2200W and dual heaters",
-    "image": "/images/products/placeholder-800x800.png",
-    "bestSeller": true
+    "description": "A spacious 5.7 L smart air fryer that cooks family meals quickly and evenly with 2200W dual heating elements. Enjoy crispy, tender results with up to 85% less oil.",
+    "image": "/images/products/air-fryer.png",
+    "bestSeller": true,
+    "colours": [
+      "#111827"
+    ],
+    "features": [
+      {
+        "title": "Dual-Zone Heating Elements",
+        "description": "Upper and lower synchronized heating coils eliminate the need to shake or flip your food",
+        "image": "/images/products/air-fryer.png"
+      },
+      {
+        "title": "360\u00b0 Superheated Airflow",
+        "description": "Circulates 2200W of vortex heat for perfectly crisp exteriors and juicy interiors",
+        "image": "/images/banners/warehouse.png"
+      },
+      {
+        "title": "8 One-Touch Smart Presets",
+        "description": "Dedicated culinary algorithms for fries, chicken, steak, fish, baking, dehydrating, and reheating",
+        "image": "/images/products/air-fryer.png"
+      },
+      {
+        "title": "Dishwasher-Safe Non-Stick Basket",
+        "description": "Premium ceramic non-stick coating without PFOA, completely dishwasher safe for easy cleaning",
+        "image": "/images/categories/kitchen-banner.png"
+      }
+    ],
+    "specs": [
+      {
+        "title": "Technical specifications",
+        "items": [
+          "Capacity: 5.7 Liters (Family size)",
+          "Power: 2200W",
+          "Voltage: 220\u2013240 V ~ 50/60Hz",
+          "Temperature Range: 40\u00b0C \u2013 230\u00b0C",
+          "Timer: 1 \u2013 60 minutes with auto shut-off",
+          "Display: Angled digital LED touchscreen"
+        ]
+      },
+      {
+        "title": "Dimensions & weight",
+        "items": [
+          "Height: 32.5 cm",
+          "Width: 28.0 cm",
+          "Depth: 34.0 cm",
+          "Weight: 5.4 kg",
+          "Cable length: 1.0 m"
+        ]
+      },
+      {
+        "title": "Product information",
+        "items": [
+          "BPA & PFOA free non-stick ceramic basket",
+          "Auto-pause when basket is pulled out",
+          "Overheat protection system",
+          "Warranty: 2-year limited manufacturer warranty"
+        ]
+      }
+    ],
+    "lifestyleImages": {
+      "top": "/images/banners/warehouse.png",
+      "bottom": "/images/categories/kitchen-banner.png"
+    }
   },
   {
     "id": "prod-5",
@@ -100,8 +293,70 @@
     "name": "Octopus Indoor Camera",
     "category": "home-security",
     "shortDescription": "A 2K indoor camera that pans to cover the whole room and tracks movement as it happens",
-    "image": "/images/products/placeholder-900x1400.png",
-    "bestSeller": true
+    "description": "A 2K HD smart indoor security camera with 360\u00b0 panoramic pan-and-tilt. Built-in AI automatically tracks human movement and alerts you instantly in real time.",
+    "image": "/images/products/indoor-cam.png",
+    "bestSeller": true,
+    "colours": [
+      "#FFFFFF",
+      "#111827"
+    ],
+    "features": [
+      {
+        "title": "2K Ultra HD Pan & Tilt",
+        "description": "Motorized 350\u00b0 horizontal rotation and 100\u00b0 vertical tilt ensure complete zero-blindspot room coverage",
+        "image": "/images/products/indoor-cam.png"
+      },
+      {
+        "title": "Smart AI Motion & Human Tracking",
+        "description": "Identifies people in real time, pans dynamically to follow movement, and filters out false alerts",
+        "image": "/images/products/home-security-family.jpg"
+      },
+      {
+        "title": "Enhanced Infrared Night Vision",
+        "description": "High-power 940nm infrared LEDs provide crystal-clear black-and-white video up to 10 meters in darkness",
+        "image": "/images/products/phone-frame.png"
+      },
+      {
+        "title": "Real-Time Two-Way Audio",
+        "description": "Built-in anti-noise microphone and speaker let you communicate with pets and family from anywhere",
+        "image": "/images/products/security-camera-large.png"
+      }
+    ],
+    "specs": [
+      {
+        "title": "Technical specifications",
+        "items": [
+          "Video Resolution: 2K (2304 x 1296)",
+          "Field of View: 360\u00b0 horizontal / 110\u00b0 vertical",
+          "Wi-Fi: 2.4 GHz / 5 GHz dual-band",
+          "Audio: 2-way talk with noise cancellation",
+          "Storage: MicroSD up to 256GB and encrypted cloud backup"
+        ]
+      },
+      {
+        "title": "Dimensions & weight",
+        "items": [
+          "Height: 11.2 cm",
+          "Width: 7.5 cm",
+          "Depth: 7.5 cm",
+          "Weight: 230 g",
+          "Cable length: 2.0 m USB-C power cord"
+        ]
+      },
+      {
+        "title": "Product information",
+        "items": [
+          "Compatible with iOS, Android, Alexa, and Google Assistant",
+          "Bank-grade 128-bit AES video encryption",
+          "Privacy shutter mode via mobile app",
+          "Warranty: 2-year limited manufacturer warranty"
+        ]
+      }
+    ],
+    "lifestyleImages": {
+      "top": "/images/products/home-security-family.jpg",
+      "bottom": "/images/products/security-camera-large.png"
+    }
   },
   {
     "id": "prod-6",
@@ -109,8 +364,69 @@
     "name": "Octopus Outdoor Camera",
     "category": "home-security",
     "shortDescription": "An outdoor camera that runs on solar power and records in 3K",
-    "image": "/images/products/placeholder-800x800.png",
-    "bestSeller": false
+    "description": "An ultra-durable solar-powered outdoor security camera recording in brilliant 3K resolution. Engineered for 365-day continuous protection in any weather condition.",
+    "image": "/images/products/outdoor-cam.png",
+    "bestSeller": false,
+    "colours": [
+      "#FFFFFF",
+      "#111827"
+    ],
+    "features": [
+      {
+        "title": "Endless Solar Charging",
+        "description": "Integrated high-efficiency solar panel keeps the high-capacity battery charged with just 2 hours of direct sun daily",
+        "image": "/images/products/outdoor-cam.png"
+      },
+      {
+        "title": "3K Ultra-Clear Resolution",
+        "description": "Captures fine details like faces and license plates with exceptional daytime and night clarity",
+        "image": "/images/products/home-security-family.jpg"
+      },
+      {
+        "title": "Full-Color Night Vision",
+        "description": "Ultra-bright 600-lumen spotlight illuminates dark zones for vibrant color recording after sunset",
+        "image": "/images/products/phone-frame.png"
+      },
+      {
+        "title": "IP67 Weatherproof Rating",
+        "description": "Built to withstand heavy rain, snow, dust, and extreme temperatures from -20\u00b0C to 50\u00b0C",
+        "image": "/images/products/outdoor-cam.png"
+      }
+    ],
+    "specs": [
+      {
+        "title": "Technical specifications",
+        "items": [
+          "Resolution: 3K (2880 x 1620)",
+          "Battery: 10,400 mAh rechargeable lithium-ion",
+          "Solar Panel: 5W high-efficiency monocrystalline",
+          "Siren: 105 dB deterrent security alarm",
+          "Weather Rating: IP67 certified all-weather durability"
+        ]
+      },
+      {
+        "title": "Dimensions & weight",
+        "items": [
+          "Height: 18.0 cm",
+          "Width: 8.5 cm",
+          "Depth: 9.5 cm",
+          "Weight: 680 g"
+        ]
+      },
+      {
+        "title": "Product information",
+        "items": [
+          "PIR thermal sensor with 12m detection radius",
+          "Local storage via Hub and encrypted cloud",
+          "Tamper detection sensor",
+          "Warranty: 2-year limited manufacturer warranty"
+        ]
+      }
+    ],
+    "lifestyleImages": {
+      "top": "/images/products/home-security-family.jpg",
+      "bottom": "/images/products/outdoor-cam.png"
+    }
   },
   {
     "id": "prod-7",
@@ -118,8 +434,69 @@
     "name": "Octopus Video Doorbell",
     "category": "home-security",
     "shortDescription": "A 2K video doorbell that lets you answer from your phone",
-    "image": "/images/products/placeholder-800x800.png",
-    "bestSeller": false
+    "description": "A 2K smart video doorbell with head-to-toe 16:9 vertical view. See packages on your doorstep and speak directly with visitors from your phone wherever you are.",
+    "image": "/images/products/doorbell.png",
+    "bestSeller": false,
+    "colours": [
+      "#111827",
+      "#FFFFFF"
+    ],
+    "features": [
+      {
+        "title": "Head-to-Toe 2K Viewing",
+        "description": "Ultra-wide 160\u00b0 diagonal field of view lets you see full-body visitors and packages right at your doorstep",
+        "image": "/images/products/doorbell.png"
+      },
+      {
+        "title": "Package & Delivery Detection",
+        "description": "Intelligent computer vision detects when a delivery is placed or removed, sending instant alerts",
+        "image": "/images/categories/home-security-banner.png"
+      },
+      {
+        "title": "Two-Way Audio & Quick Replies",
+        "description": "Talk to visitors live with low-latency audio or play pre-recorded quick responses with one tap",
+        "image": "/images/products/phone-frame.png"
+      },
+      {
+        "title": "Dual Power Flexibility",
+        "description": "Installs wire-free using the long-life rechargeable battery or hardwires into existing doorbell chime wires",
+        "image": "/images/products/doorbell.png"
+      }
+    ],
+    "specs": [
+      {
+        "title": "Technical specifications",
+        "items": [
+          "Resolution: 2K (2048 x 1536)",
+          "Aspect Ratio: 4:3 head-to-toe wide angle",
+          "Battery Life: Up to 6 months per charge",
+          "Chime: Included indoor plug-in wireless chime",
+          "Night Vision: High-clarity infrared up to 5 meters"
+        ]
+      },
+      {
+        "title": "Dimensions & weight",
+        "items": [
+          "Height: 14.5 cm",
+          "Width: 4.8 cm",
+          "Depth: 3.2 cm",
+          "Weight: 210 g"
+        ]
+      },
+      {
+        "title": "Product information",
+        "items": [
+          "IP65 water and weather resistant",
+          "Anti-theft tamper alarm and mounting bracket",
+          "Works with Octopus Smart Hub and Alexa",
+          "Warranty: 2-year limited manufacturer warranty"
+        ]
+      }
+    ],
+    "lifestyleImages": {
+      "top": "/images/categories/home-security-banner.png",
+      "bottom": "/images/products/home-security-family.jpg"
+    }
   },
   {
     "id": "prod-8",
@@ -127,8 +504,69 @@
     "name": "Octopus Power Bank 10,000 mAh",
     "category": "accessories",
     "shortDescription": "A slim power bank with the USB-C cable already built in",
-    "image": "/images/products/placeholder-800x800.png",
-    "bestSeller": true
+    "description": "A slim 10,000 mAh portable power bank with a built-in USB-C braided cable. Pocket-friendly power engineered for fast charging on the move.",
+    "image": "/images/products/powerbank.png",
+    "bestSeller": true,
+    "colours": [
+      "#111827",
+      "#E5E7EB"
+    ],
+    "features": [
+      {
+        "title": "Built-in Braided USB-C Cable",
+        "description": "Never forget your charging cable again\u2014integrated durable cable snaps neatly into the housing",
+        "image": "/images/products/powerbank.png"
+      },
+      {
+        "title": "30W Power Delivery Fast Charge",
+        "description": "Charges an iPhone from 0% to 60% in just 30 minutes with high-efficiency PD output",
+        "image": "/images/categories/accessories-banner.png"
+      },
+      {
+        "title": "Ultra-Slim Aircraft-Grade Shell",
+        "description": "Just 14mm thick with rounded edges that slip effortlessly into pockets and travel bags",
+        "image": "/images/products/powerbank.png"
+      },
+      {
+        "title": "Airline-Approved 37Wh Capacity",
+        "description": "Fully compliant with international TSA flight regulations for worry-free carry-on travel",
+        "image": "/images/products/usb-c-cable.png"
+      }
+    ],
+    "specs": [
+      {
+        "title": "Technical specifications",
+        "items": [
+          "Battery Capacity: 10,000 mAh / 37Wh",
+          "Input: USB-C port (5V=3A, 9V=2A, 12V=1.5A)",
+          "Output: Built-in USB-C cable (Max 30W PD)",
+          "Secondary Output: USB-A port (Max 22.5W QC)",
+          "Total Output: 5V=3A max shared"
+        ]
+      },
+      {
+        "title": "Dimensions & weight",
+        "items": [
+          "Height: 13.8 cm",
+          "Width: 6.8 cm",
+          "Depth: 1.4 cm",
+          "Weight: 198 g"
+        ]
+      },
+      {
+        "title": "Product information",
+        "items": [
+          "Multi-protect temperature and short-circuit protection",
+          "Smart LED percentage battery indicator",
+          "Pass-through charging support",
+          "Warranty: 2-year limited manufacturer warranty"
+        ]
+      }
+    ],
+    "lifestyleImages": {
+      "top": "/images/categories/accessories-banner.png",
+      "bottom": "/images/products/powerbank.png"
+    }
   },
   {
     "id": "prod-9",
@@ -136,8 +574,69 @@
     "name": "Octopus Power Board with USB Charging",
     "category": "accessories",
     "shortDescription": "A compact power board with four sockets and four USB ports",
-    "image": "/images/products/placeholder-800x800.png",
-    "bestSeller": false
+    "description": "A modern power board with four surge-protected AC outlets, two 65W USB-C PD ports, and two USB-A charging slots. Power your entire workstation cleanly from a single socket.",
+    "image": "/images/products/powerboard.png",
+    "bestSeller": false,
+    "colours": [
+      "#111827",
+      "#FFFFFF"
+    ],
+    "features": [
+      {
+        "title": "65W GaN High-Speed Charging",
+        "description": "Fast-charges laptops, tablets, and phones directly from the board without needing bulky power bricks",
+        "image": "/images/products/powerboard.png"
+      },
+      {
+        "title": "1700 Joules Surge Protection",
+        "description": "Safeguards your valuable home electronics against voltage spikes, lightning, and electrical noise",
+        "image": "/images/categories/accessories-banner.png"
+      },
+      {
+        "title": "Wide-Spaced AC Sockets",
+        "description": "Generously spaced outlet positions accommodate oversized power adapters without blocking neighboring sockets",
+        "image": "/images/products/usb-c-cable.png"
+      },
+      {
+        "title": "Ultra-Thin Flat Right-Angle Plug",
+        "description": "Low-profile 45-degree plug fits flush behind sofas and desks while leaving the other wall socket free",
+        "image": "/images/products/powerboard.png"
+      }
+    ],
+    "specs": [
+      {
+        "title": "Technical specifications",
+        "items": [
+          "AC Outlets: 4 surge-protected (Max 2400W / 10A, 240V)",
+          "USB-C Ports: 2x USB-C (Max 65W PD)",
+          "USB-A Ports: 2x USB-A (Max 18W QC)",
+          "Surge Rating: 1700 Joules protection",
+          "Cable: 1.8 m heavy-duty braided power cord"
+        ]
+      },
+      {
+        "title": "Dimensions & weight",
+        "items": [
+          "Height: 26.5 cm",
+          "Width: 7.2 cm",
+          "Depth: 3.2 cm",
+          "Weight: 520 g"
+        ]
+      },
+      {
+        "title": "Product information",
+        "items": [
+          "750\u00b0C Fire-retardant polycarbonate casing",
+          "Individual child safety shutters on all sockets",
+          "Master power switch with integrated circuit breaker",
+          "Warranty: 2-year limited manufacturer warranty"
+        ]
+      }
+    ],
+    "lifestyleImages": {
+      "top": "/images/categories/accessories-banner.png",
+      "bottom": "/images/products/powerboard.png"
+    }
   },
   {
     "id": "prod-10",
@@ -145,8 +644,68 @@
     "name": "Octopus 3-in-1 Magnetic Charging Station",
     "category": "accessories",
     "shortDescription": "A Qi2 stand that charges your phone, watch and earbuds at the same time",
-    "image": "/images/products/placeholder-800x800.png",
-    "bestSeller": false
+    "description": "A 3-in-1 Qi2 magnetic wireless charging stand. Simultaneously fast-charges your phone, smartwatch, and earbuds with seamless magnetic alignment and zero cable clutter.",
+    "image": "/images/products/magnetic-charging-station.png",
+    "bestSeller": false,
+    "colours": [
+      "#111827",
+      "#FFFFFF"
+    ],
+    "features": [
+      {
+        "title": "Certified Qi2 15W Magnetic Alignment",
+        "description": "Snaps securely in portrait or landscape for StandBy mode while delivering true 15W wireless speed",
+        "image": "/images/products/magnetic-charging-station.png"
+      },
+      {
+        "title": "3-in-1 Simultaneous Power",
+        "description": "Dedicated wireless zones for phone (15W), smartwatch (5W fast charge), and earbuds (5W)",
+        "image": "/images/categories/accessories-banner.png"
+      },
+      {
+        "title": "Weighted Zinc Alloy Base",
+        "description": "Solid metal construction with non-slip silicone feet allows effortless one-handed phone detachment",
+        "image": "/images/products/magnetic-charging-station.png"
+      },
+      {
+        "title": "Fold-Flat Travel Architecture",
+        "description": "Folds completely flat to fit inside backpacks and laptop cases for effortless portability on trips",
+        "image": "/images/products/usb-c-cable.png"
+      }
+    ],
+    "specs": [
+      {
+        "title": "Technical specifications",
+        "items": [
+          "Qi2 Phone Stand: 15W fast wireless charging",
+          "Apple Watch Charger: 5W certified fast-charging module",
+          "Earbuds Base: 5W universal Qi wireless pad",
+          "Input: USB-C PD (36W power adapter included)"
+        ]
+      },
+      {
+        "title": "Dimensions & weight",
+        "items": [
+          "Height: 15.5 cm (unfolded) / 2.8 cm (folded)",
+          "Width: 8.8 cm",
+          "Depth: 11.2 cm",
+          "Weight: 310 g"
+        ]
+      },
+      {
+        "title": "Product information",
+        "items": [
+          "Foreign object detection and thermal regulation",
+          "MagSafe and Qi2 certified compatibility",
+          "Includes 1.5 m premium braided USB-C cable",
+          "Warranty: 2-year limited manufacturer warranty"
+        ]
+      }
+    ],
+    "lifestyleImages": {
+      "top": "/images/categories/accessories-banner.png",
+      "bottom": "/images/products/magnetic-charging-station.png"
+    }
   },
   {
     "id": "prod-11",
@@ -154,7 +713,69 @@
     "name": "Octopus Blender",
     "category": "kitchen",
     "shortDescription": "A portable blender that blends straight into a cup you can take with you",
-    "image": "/images/products/placeholder-800x800.png",
-    "bestSeller": true
+    "description": "A compact 500ml portable personal blender that blends smoothies straight into a drinking cup you can take with you. Powered by a high-torque motor and USB-C rechargeable battery.",
+    "image": "/images/products/portable-blender.png",
+    "bestSeller": true,
+    "colours": [
+      "#111827",
+      "#1E3A8A",
+      "#047857"
+    ],
+    "features": [
+      {
+        "title": "Blend Directly in the Cup",
+        "description": "Whip up shakes, protein drinks, and baby food right in the BPA-free cup and drink straight through the sip lid",
+        "image": "/images/products/portable-blender.png"
+      },
+      {
+        "title": "300W High-Torque Motor",
+        "description": "Crushes ice cubes and frozen fruit effortlessly with 6 stainless steel serrated blades",
+        "image": "/images/categories/kitchen-banner.png"
+      },
+      {
+        "title": "USB-C Rechargeable Battery",
+        "description": "Blends up to 15 times on a single charge with water-resistant USB-C charging port",
+        "image": "/images/products/portable-blender.png"
+      },
+      {
+        "title": "Magnetic Safety Sensor",
+        "description": "Blades will not spin unless the cup is safely locked onto the base, preventing accidental activation",
+        "image": "/images/products/blender-lifestyle-2.png"
+      }
+    ],
+    "specs": [
+      {
+        "title": "Technical specifications",
+        "items": [
+          "Capacity: 500 ml portable tumbler",
+          "Motor Power: 300W high-torque",
+          "Speed: 20,000 RPM",
+          "Battery: 4000 mAh rechargeable lithium cell",
+          "Charging Port: Water-resistant USB-C (2 hours to full)"
+        ]
+      },
+      {
+        "title": "Dimensions & weight",
+        "items": [
+          "Height: 24.0 cm",
+          "Width: 8.2 cm",
+          "Depth: 8.2 cm",
+          "Weight: 520 g"
+        ]
+      },
+      {
+        "title": "Product information",
+        "items": [
+          "Tritan BPA-free tumbler with leak-proof lid",
+          "One-touch 45-second blending cycle",
+          "Self-cleaning with warm water and soap",
+          "Warranty: 2-year limited manufacturer warranty"
+        ]
+      }
+    ],
+    "lifestyleImages": {
+      "top": "/images/categories/kitchen-banner.png",
+      "bottom": "/images/products/blender-lifestyle-2.png"
+    }
   }
 ]

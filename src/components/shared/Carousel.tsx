@@ -68,6 +68,16 @@ export function Carousel({
 
   if (!products || products.length === 0) return null;
 
+  const isCrossSell = cardVariant === "cross-sell";
+
+  const trackPaddingClasses = isCrossSell
+    ? "w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12"
+    : "pl-[max(16px,calc(50%-160px))] pr-[max(16px,calc(50%-160px))] min-[810px]:pl-[calc(50%-344px)] min-[810px]:pr-[calc(50%-344px)] min-[1200px]:pl-[calc(50%-524px)] min-[1200px]:pr-[calc(50%-524px)]";
+
+  const slideClasses = isCrossSell
+    ? "w-[220px] sm:w-[240px] min-[1200px]:w-[260px] shrink-0 snap-start flex justify-center"
+    : "w-[320px] min-[810px]:w-[688px] min-[1200px]:w-[1048px] shrink-0 snap-center flex justify-center";
+
   return (
     <div
       className={`relative w-full ${className}`.trim()}
@@ -80,12 +90,12 @@ export function Carousel({
         ref={scrollRef}
         tabIndex={0}
         aria-label="Scrollable list of best seller products"
-        className="flex gap-[24px] overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 outline-none focus-visible:ring-2 focus-visible:ring-black [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden pl-[max(16px,calc(50%-160px))] pr-[max(16px,calc(50%-160px))] min-[810px]:pl-[calc(50%-344px)] min-[810px]:pr-[calc(50%-344px)] min-[1200px]:pl-[calc(50%-524px)] min-[1200px]:pr-[calc(50%-524px)]"
+        className={`flex gap-[24px] overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 outline-none focus-visible:ring-2 focus-visible:ring-black [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden ${trackPaddingClasses}`}
       >
         {products.map((product, idx) => (
           <div
             key={product.id || product.slug}
-            className="w-[320px] min-[810px]:w-[688px] min-[1200px]:w-[1048px] shrink-0 snap-center flex justify-center"
+            className={slideClasses}
           >
             <ProductCard
               product={product}

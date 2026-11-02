@@ -12,20 +12,36 @@ export function HairCareBanner({ product }: HairCareBannerProps) {
   const description =
     product?.shortDescription ||
     "Dry your hair faster and with less frizz with this powerful ionic hair dryer";
+  const targetHref = product ? `/products/${product.slug}` : "/products/ionic-hair-dryer";
 
   return (
     <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 py-8 sm:py-12">
-      <div className="relative w-full rounded-3xl md:rounded-[32px] overflow-hidden bg-[#dcb89f] flex flex-col md:flex-row items-stretch justify-between shadow-xs border border-neutral-300/40">
-        {/* Left Text Block */}
-        <div className="p-8 sm:p-12 md:p-16 flex flex-col justify-center items-start md:w-5/12 z-10">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-dark mb-4 sm:mb-6 leading-tight">
+      <div className="relative w-full rounded-[32px] overflow-hidden bg-[#D9BBA0] min-h-[440px] md:min-h-[500px] flex items-center shadow-xs border border-neutral-300/40">
+        {/* Background Image of model with hair dryer positioned on the right */}
+        <div className="absolute inset-0 w-full h-full">
+          <Image
+            src="/images/banners/hair-dryer-banner.png"
+            alt={title}
+            fill
+            sizes="(min-width: 1200px) 1200px, 100vw"
+            className="object-cover object-right"
+            priority={false}
+          />
+        </div>
+
+        {/* Left Text Content */}
+        <div className="relative z-10 p-8 sm:p-12 md:p-16 max-w-lg flex flex-col items-start bg-gradient-to-r from-[#D9BBA0]/80 via-[#D9BBA0]/40 to-transparent md:bg-none rounded-[32px]">
+          <span className="text-[#E51A24] text-sm font-semibold tracking-wide mb-2 uppercase">
+            Hair Care
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-dark mb-4 leading-tight">
             {title}
           </h2>
-          <p className="text-base sm:text-lg text-neutral-dark/85 leading-relaxed mb-6 sm:mb-8 max-w-sm">
+          <p className="text-base sm:text-lg text-neutral-dark/85 leading-relaxed mb-6 sm:mb-8">
             {description}
           </p>
           <Button
-            href="/products/countertop-blender"
+            href={targetHref}
             variant="primary"
             size="md"
             aria-label={`Learn more about ${title}`}
@@ -33,17 +49,6 @@ export function HairCareBanner({ product }: HairCareBannerProps) {
           >
             Learn more
           </Button>
-        </div>
-
-        {/* Right Lifestyle Image */}
-        <div className="relative w-full md:w-7/12 min-h-[300px] sm:min-h-[380px] md:min-h-[460px] overflow-hidden">
-          <Image
-            src="/images/banners/placeholder-1600x900.png"
-            alt={title}
-            fill
-            sizes="(min-width: 1200px) 58vw, (min-width: 810px) 50vw, 100vw"
-            className="object-cover object-center"
-          />
         </div>
       </div>
     </section>

@@ -8,6 +8,7 @@ export interface ProductSpecSection {
 export interface ProductFeature {
   title: string;
   description: string;
+  image?: string;
 }
 
 export interface Product {
@@ -16,11 +17,16 @@ export interface Product {
   name: string;
   category: ProductCategory;
   shortDescription: string;
+  description?: string;
   image: string;
   bestSeller: boolean;
   colours?: string[];
   features?: ProductFeature[];
   specs?: ProductSpecSection[];
+  lifestyleImages?: {
+    top?: string;
+    bottom?: string;
+  };
 }
 
 export interface CategoryInfo {

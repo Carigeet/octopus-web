@@ -21,23 +21,23 @@ export function ExploreCategories({ categories }: ExploreCategoriesProps) {
           <Link
             key={cat.slug}
             href={`/#${cat.slug}`}
-            className="group rounded-3xl bg-neutral-light p-6 sm:p-8 flex flex-col items-center justify-between aspect-square border border-border-subtle/60 transition-all duration-300 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
+            className="group flex flex-col items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red rounded-[32px]"
           >
-            {/* Centered Image */}
-            <div className="relative w-full flex-1 flex items-center justify-center p-2">
-              <div className="relative w-full h-full max-h-36 sm:max-h-44">
+            {/* Centered Image inside Square Rounded Tile */}
+            <div className="w-full aspect-square rounded-[32px] bg-[#F9F9F9] p-6 sm:p-8 flex items-center justify-center border border-neutral-200/60 shadow-xs transition-all duration-300 group-hover:shadow-md">
+              <div className="relative w-full h-full max-h-36 sm:max-h-48">
                 <Image
                   src={cat.image}
                   alt={cat.name}
                   fill
                   sizes="(min-width: 1200px) 25vw, (min-width: 810px) 33vw, 50vw"
-                  className="object-contain transition-transform duration-300 ease-out group-hover:scale-108"
+                  className="object-contain transition-transform duration-300 ease-out group-hover:scale-105"
                 />
               </div>
             </div>
 
-            {/* Label below */}
-            <span className="font-semibold text-sm sm:text-base text-neutral-dark group-hover:text-brand-red transition-colors pt-3">
+            {/* Label below tile */}
+            <span className="font-semibold text-sm sm:text-base text-neutral-dark group-hover:text-brand-red transition-colors pt-4 text-center">
               {cat.name}
             </span>
           </Link>
@@ -48,4 +48,3 @@ export function ExploreCategories({ categories }: ExploreCategoriesProps) {
 }
 
 export default ExploreCategories;
-

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Product } from "@/types/product";
 import { Button } from "@/components/common/Button";
 
@@ -9,6 +10,7 @@ export type ProductCardVariant =
   | "medium-vertical"
   | "medium-horizontal"
   | "small"
+  | "cross-sell"
   | "horizontal"
   | "vertical"
   | "featured";
@@ -27,14 +29,15 @@ export function ProductCard({
   variant = "bestseller",
   className = "",
   priority = false,
-  href = "/products/countertop-blender",
+  href,
   lifestyleImage,
 }: ProductCardProps) {
+  const targetHref = href || `/products/${product.slug}`;
   const formattedCategory = product.category.replace(/-/g, " ");
   const imageSource = lifestyleImage || product.image;
 
   // Normalize legacy/alias variants
-  const activeVariant: "bestseller" | "large" | "medium-vertical" | "medium-horizontal" | "small" =
+  const activeVariant: "bestseller" | "large" | "medium-vertical" | "medium-horizontal" | "small" | "cross-sell" =
     variant === "horizontal"
       ? "bestseller"
       : variant === "featured"
@@ -69,7 +72,7 @@ export function ProductCard({
             {product.shortDescription}
           </p>
           <Button
-            href={href}
+            href={targetHref}
             variant="primary"
             size="md"
             aria-label={`Learn more about ${product.name}`}
@@ -118,7 +121,7 @@ export function ProductCard({
             {product.shortDescription}
           </p>
           <Button
-            href={href}
+            href={targetHref}
             variant="primary"
             size="md"
             aria-label={`Learn more about ${product.name}`}
@@ -168,7 +171,7 @@ export function ProductCard({
             {product.shortDescription}
           </p>
           <Button
-            href={href}
+            href={targetHref}
             variant="primary"
             size="md"
             aria-label={`Learn more about ${product.name}`}
@@ -215,7 +218,7 @@ export function ProductCard({
             {product.shortDescription}
           </p>
           <Button
-            href={href}
+            href={targetHref}
             variant="primary"
             size="sm"
             aria-label={`Learn more about ${product.name}`}
@@ -241,7 +244,37 @@ export function ProductCard({
   }
 
   // -------------------------------------------------------------
-  // 5. SMALL (Accessories 3-column Grid)
+  // 5. CROSS-SELL (PDP Bottom Carousel - Vertical Minimal Card)
+  // -------------------------------------------------------------
+  if (activeVariant === "cross-sell") {
+    return (
+      <Link
+        href={targetHref}
+        className={`group block w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black rounded-2xl ${className}`.trim()}
+        aria-label={product.name}
+      >
+        <div className="relative w-full aspect-square bg-[#F9F9F9] rounded-2xl p-6 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-[1.02]">
+          <Image
+            src={imageSource}
+            alt={product.name}
+            fill
+            sizes="260px"
+            className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+            priority={priority}
+          />
+        </div>
+        <h4 className="text-base sm:text-lg font-bold text-gray-950 group-hover:text-brand-red transition-colors mb-1 line-clamp-1">
+          {product.name}
+        </h4>
+        <p className="text-xs sm:text-sm text-gray-600 line-clamp-2 leading-relaxed">
+          {product.shortDescription}
+        </p>
+      </Link>
+    );
+  }
+
+  // -------------------------------------------------------------
+  // 6. SMALL (Accessories 3-column Grid)
   // Dimensions from spec:
   // Desktop: 450 × 614.7 px (~3:4 vertical stacked)
   // Tablet:  238 × 457 px
@@ -263,7 +296,7 @@ export function ProductCard({
           {product.shortDescription}
         </p>
         <Button
-          href={href}
+          href={targetHref}
           variant="primary"
           size="md"
           aria-label={`Learn more about ${product.name}`}

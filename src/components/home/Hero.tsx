@@ -8,7 +8,7 @@ export function Hero() {
       aria-label="Octopus Ionic Hair Dryer Hero Showcase"
     >
       <Image
-        src="/images/banners/placeholder-1920x800.png"
+        src="/images/banners/hero-macro.png"
         alt="Octopus Ionic Hair Dryer engineered precision detail"
         fill
         priority
