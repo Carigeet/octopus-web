@@ -32,7 +32,7 @@ const variantStyles: Record<ButtonVariant, string> = {
   outline:
     "bg-transparent text-neutral-dark border border-neutral-300 hover:bg-neutral-50 active:bg-neutral-100 focus-visible:ring-neutral-dark",
   white:
-    "bg-white text-brand-red hover:bg-neutral-100 active:bg-neutral-200 focus-visible:ring-white shadow-sm font-semibold",
+    "bg-white text-[#000000] hover:bg-neutral-100 active:bg-neutral-200 focus-visible:ring-white shadow-sm font-semibold",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {

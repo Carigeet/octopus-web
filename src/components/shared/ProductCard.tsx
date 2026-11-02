@@ -57,12 +57,12 @@ export function ProductCard({
   // -------------------------------------------------------------
   // 1. BEST SELLER / CAROUSEL HORIZONTAL SPLIT
   // Tag rosso di categoria SOLO ED ESCLUSIVAMENTE in questa sezione.
-  // Dimensioni da matrice: Desktop 1048 × 589 px, p-10 (40px) uniforme, gap 32px
+  // Dimensioni da matrice: Desktop 1048 × 514 px, pl-[80px] su desktop, gap 32px
   // -------------------------------------------------------------
   if (activeVariant === "bestseller") {
     return (
       <article
-        className={`group relative w-full max-w-[320px] min-[810px]:max-w-[688px] min-[1200px]:max-w-[1048px] min-h-[512px] min-[810px]:min-h-[413px] min-[1200px]:min-h-[514px] min-[1200px]:h-[514px] bg-[#F9F9F9] rounded-[32px] p-6 sm:p-8 min-[1200px]:p-10 flex flex-col min-[810px]:flex-row items-center justify-between gap-6 min-[1200px]:gap-8 border border-neutral-200/60 shadow-xs overflow-hidden transition-all duration-300 hover:shadow-md ${className}`.trim()}
+        className={`group relative w-full max-w-[320px] min-[810px]:max-w-[688px] min-[1200px]:max-w-[1048px] min-h-[512px] min-[810px]:min-h-[413px] min-[1200px]:min-h-[514px] min-[1200px]:h-[514px] bg-[#F9F9F9] rounded-[32px] p-6 sm:p-8 min-[810px]:py-8 min-[810px]:pl-12 min-[810px]:pr-8 min-[1200px]:py-10 min-[1200px]:pl-[80px] min-[1200px]:pr-10 flex flex-col min-[810px]:flex-row items-center justify-between gap-6 min-[1200px]:gap-8 border border-neutral-200/60 shadow-xs overflow-hidden transition-all duration-300 hover:shadow-md ${className}`.trim()}
       >
         {/* Left: Text Block (max-w-[344px]) with Category Tag */}
         <div className="w-full min-[810px]:w-auto min-[810px]:max-w-[344px] flex flex-col items-start justify-center z-10 shrink-0">
@@ -124,12 +124,12 @@ export function ProductCard({
             />
           </div>
 
-          {/* Left: Text Block (senza tag di categoria - desktop: pt/pb 40px, pl 64px) */}
-          <div className="relative z-10 p-6 sm:p-10 min-[1200px]:py-10 min-[1200px]:pl-16 min-[1200px]:pr-8 flex flex-col justify-center items-start min-[810px]:w-1/2 min-[1200px]:max-w-[440px]">
-            <h3 className="text-2xl sm:text-3xl min-[1200px]:text-4xl font-bold text-gray-950 tracking-tight mb-3 sm:mb-4">
+          {/* Left: Text Block (senza tag di categoria - desktop: pt/pb 40px, pl 80px) */}
+          <div className="relative z-10 p-6 sm:p-10 min-[810px]:py-10 min-[810px]:pl-12 min-[810px]:pr-8 min-[1200px]:py-10 min-[1200px]:pl-[80px] min-[1200px]:pr-10 flex flex-col justify-center items-start min-[810px]:w-1/2 min-[1200px]:max-w-[460px]">
+            <h3 className="text-2xl sm:text-3xl min-[1200px]:text-4xl font-bold text-[#000000] tracking-tight mb-3 sm:mb-4">
               {product.name}
             </h3>
-            <p className="text-sm min-[1200px]:text-base text-gray-700 leading-relaxed mb-6 min-[1200px]:mb-8 max-w-[344px]">
+            <p className="text-sm min-[1200px]:text-base text-gray-800 leading-relaxed mb-6 min-[1200px]:mb-8 max-w-[344px]">
               {product.shortDescription}
             </p>
             <Button
@@ -150,8 +150,8 @@ export function ProductCard({
       <article
         className={`group relative w-full min-h-[537px] min-[810px]:min-h-[420px] min-[1200px]:min-h-[621px] bg-[#F9F9F9] rounded-[32px] overflow-hidden flex flex-col min-[810px]:flex-row items-stretch justify-between border border-neutral-200/60 shadow-xs transition-all duration-300 hover:shadow-md ${className}`.trim()}
       >
-        {/* Left: Text Block (desktop: pt/pb 40px, pl 64px) */}
-        <div className="p-6 sm:p-10 min-[1200px]:py-10 min-[1200px]:pl-16 min-[1200px]:pr-8 flex flex-col justify-center items-start min-[810px]:w-1/2 min-[1200px]:max-w-[420px] z-10">
+        {/* Left: Text Block (desktop: pt/pb 40px, pl 80px) */}
+        <div className="p-6 sm:p-10 min-[810px]:py-10 min-[810px]:pl-12 min-[810px]:pr-8 min-[1200px]:py-10 min-[1200px]:pl-[80px] min-[1200px]:pr-10 flex flex-col justify-center items-start min-[810px]:w-1/2 min-[1200px]:max-w-[460px] z-10">
           <h3 className="text-2xl sm:text-3xl min-[1200px]:text-4xl font-bold text-gray-950 tracking-tight mb-3 sm:mb-4">
             {product.name}
           </h3>
@@ -233,11 +233,11 @@ export function ProductCard({
 
     return (
       <article
-        className={`group relative w-full min-h-[537px] min-[810px]:min-h-[486px] min-[1200px]:min-h-[720px] bg-[#F9F9F9] rounded-[32px] pt-10 min-[810px]:pt-12 min-[1200px]:pt-16 px-6 sm:px-12 min-[1200px]:px-20 pb-8 min-[1200px]:pb-10 flex flex-col items-center text-center justify-between gap-8 border border-neutral-200/60 shadow-xs overflow-hidden transition-all duration-300 hover:shadow-md ${className}`.trim()}
+        className={`group relative w-full min-h-[537px] min-[810px]:min-h-[486px] min-[1200px]:min-h-[720px] bg-[#F9F9F9] rounded-[32px] pt-10 min-[810px]:pt-12 min-[1200px]:pt-16 px-6 sm:px-10 min-[810px]:px-12 min-[1200px]:px-[80px] pb-8 min-[1200px]:pb-10 flex flex-col items-center text-center justify-start gap-8 min-[810px]:gap-10 min-[1200px]:gap-[60px] border border-neutral-200/60 shadow-xs overflow-hidden transition-all duration-300 hover:shadow-md ${className}`.trim()}
       >
         {/* Top Text Block (senza tag di categoria) */}
-        <div className="flex flex-col items-center max-w-[344px] z-10">
-          <h3 className="text-2xl font-bold text-gray-950 tracking-tight mb-3 line-clamp-2">
+        <div className="flex flex-col items-center max-w-[344px] z-10 shrink-0">
+          <h3 className="text-2xl font-bold text-[#000000] tracking-tight mb-3 line-clamp-2">
             {product.name}
           </h3>
           <p className="text-sm text-gray-600 leading-relaxed mb-6 line-clamp-2">
@@ -255,7 +255,7 @@ export function ProductCard({
         </div>
 
         {/* Bottom Product Visual Slot */}
-        <div className="relative w-full h-[260px] min-[810px]:h-[280px] min-[1200px]:h-[380px] flex items-center justify-center">
+        <div className="relative w-full flex-1 min-h-[260px] min-[810px]:min-h-[280px] min-[1200px]:min-h-[380px] flex items-center justify-center">
           <Image
             src={imageSource}
             alt={product.name}

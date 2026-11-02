@@ -17,8 +17,8 @@ export function SectionHeader({
   className = "",
 }: SectionHeaderProps) {
   return (
-    <div className={`text-center py-10 sm:py-14 md:py-16 max-w-3xl mx-auto px-4 ${className}`.trim()}>
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-dark mb-3 sm:mb-4">
+    <div className={`text-center mb-8 sm:mb-10 min-[1200px]:mb-12 max-w-3xl mx-auto px-4 ${className}`.trim()}>
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#000000] mb-3 sm:mb-4">
         {title}
       </h2>
       {subtitle && (
@@ -32,7 +32,7 @@ export function SectionHeader({
             href={ctaHref || `/#${title.toLowerCase().replace(/\s+/g, "-")}`}
             variant="outline"
             size="sm"
-            className="border-neutral-300 text-neutral-dark hover:bg-neutral-50 px-5 py-2 text-xs sm:text-sm font-medium shadow-2xs"
+            className="border-neutral-300 text-[#000000] hover:bg-neutral-50 px-5 py-2 text-xs sm:text-sm font-medium shadow-2xs"
           >
             {ctaText}
           </Button>

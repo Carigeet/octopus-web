@@ -67,8 +67,11 @@ export default async function Home() {
       {/* 2. Best Sellers Section con Air Fryer 5.7 L al 1° posto e Indoor Camera al 2° */}
       <BestSellers products={bestSellersList} />
 
-      {/* 3. Kitchen Bento Grid Section (Kettle lifestyle + 2 Blenders verticali) */}
-      <section id="kitchen" className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 py-8 sm:py-12">
+      {/* 3. Kitchen Bento Grid Section (distacco superiore 60px su desktop, 44px tablet, 32px mobile) */}
+      <section
+        id="kitchen"
+        className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 mt-[32px] min-[810px]:mt-[44px] min-[1200px]:mt-[60px] mb-[60px] min-[810px]:mb-[90px] min-[1200px]:mb-[120px]"
+      >
         <SectionHeader
           title="Kitchen"
           subtitle="Powerful appliances for everyday cooking"
@@ -105,13 +108,19 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 4. Hair Care Interstitial Banner (senza tag, modella a destra - full width) */}
-      <div id="hair-care" className="w-full">
+      {/* 4. Hair Care Interstitial Banner (distacco inferiore 180px su desktop prima di Home Security) */}
+      <div
+        id="hair-care"
+        className="w-full mb-[80px] min-[810px]:mb-[120px] min-[1200px]:mb-[180px]"
+      >
         <HairCareBanner product={hairDryer} />
       </div>
 
-      {/* 5. Home Security Asymmetric Bento Grid Section */}
-      <section id="home-security" className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 py-8 sm:py-12">
+      {/* 5. Home Security Asymmetric Bento Grid Section (respiro 180px sopra da Hair Care) */}
+      <section
+        id="home-security"
+        className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12"
+      >
         <SectionHeader
           title="Home Security"
           subtitle="Home feels safer when you're always in the loop"
@@ -152,8 +161,11 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 6. Accessories 3-Column Section (immagini in alto, schede compatte) */}
-      <section id="accessories" className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 py-8 sm:py-12">
+      {/* 6. Accessories 3-Column Section (spaziatura 120px sopra e 120px sotto verso Explore all categories) */}
+      <section
+        id="accessories"
+        className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 mt-[64px] min-[810px]:mt-[90px] min-[1200px]:mt-[120px] mb-[64px] min-[810px]:mb-[90px] min-[1200px]:mb-[120px]"
+      >
         <SectionHeader
           title="Accessories"
           subtitle="The little things that make everything work better"
@@ -186,8 +198,8 @@ export default async function Home() {
       {/* 7. Explore All Categories */}
       <ExploreCategories categories={categories} />
 
-      {/* 8. Store Locator Banner (sfondo unificato #D01A1F con maschera continua) */}
-      <StoreBanner />
+      {/* 8. Store Locator Banner (distacco superiore 180px su desktop rispetto alla griglia categorie) */}
+      <StoreBanner className="mt-[80px] min-[810px]:mt-[120px] min-[1200px]:mt-[180px]" />
     </div>
   );
 }

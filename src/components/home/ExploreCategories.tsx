@@ -5,14 +5,15 @@ import { CategoryInfo } from "@/types/product";
 
 export interface ExploreCategoriesProps {
   categories: CategoryInfo[];
+  className?: string;
 }
 
-export function ExploreCategories({ categories }: ExploreCategoriesProps) {
+export function ExploreCategories({ categories, className = "" }: ExploreCategoriesProps) {
   if (!categories || categories.length === 0) return null;
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 py-10 sm:py-14">
-      <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-dark mb-6 sm:mb-8">
+    <section className={`w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 ${className}`.trim()}>
+      <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#000000] mb-6 sm:mb-8">
         Explore all categories
       </h2>
 
@@ -37,7 +38,7 @@ export function ExploreCategories({ categories }: ExploreCategoriesProps) {
             </div>
 
             {/* Label below */}
-            <span className="font-semibold text-sm sm:text-base text-neutral-dark group-hover:text-brand-red transition-colors pt-3">
+            <span className="font-semibold text-sm sm:text-base text-[#000000] transition-colors pt-3">
               {cat.name}
             </span>
           </Link>

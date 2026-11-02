@@ -30,15 +30,15 @@ export function OctopusLogo({
 
   const content = (
     <div
-      className={`inline-flex items-center select-none ${className}`}
+      className={`inline-flex items-center my-auto leading-none select-none ${className}`.trim()}
     >
       {variant === "mark" ? (
-        // Official Mark-only SVG (viewBox 0 0 32 32)
+        // Official Mark-only SVG (viewBox 0 2 32 28 for optical vertical centering)
         <svg
-          viewBox="0 0 32 32"
+          viewBox="0 2 32 28"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className={`w-7 h-7 shrink-0 ${colorClass}`}
+          className={`w-7 h-7 block my-auto shrink-0 ${colorClass}`}
           aria-label="Octopus"
         >
           <path
@@ -82,12 +82,12 @@ export function OctopusLogo({
           </span>
         </div>
       ) : (
-        // Official Full Logo + Typography SVG (viewBox 0 0 108 32)
+        // Official Full Logo + Typography SVG (viewBox 0 2.5 108 26 for optical vertical centering)
         <svg
-          viewBox="0 0 108 32"
+          viewBox="0 2.5 108 26"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className={`h-7 w-auto shrink-0 ${colorClass}`}
+          className={`h-7 w-auto block my-auto shrink-0 ${colorClass}`}
           aria-label="Octopus"
         >
           <path
@@ -139,7 +139,7 @@ export function OctopusLogo({
     return (
       <Link
         href="/"
-        className="inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-red rounded-lg"
+        className="inline-flex items-center my-auto leading-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-red rounded-lg"
         aria-label="Octopus Home"
       >
         {content}
