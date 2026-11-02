@@ -37,7 +37,13 @@ export function ProductCard({
   const imageSource = lifestyleImage || product.image;
 
   // Normalize legacy/alias variants
-  const activeVariant: "bestseller" | "large" | "medium-vertical" | "medium-horizontal" | "small" | "cross-sell" =
+  const activeVariant:
+    | "bestseller"
+    | "large"
+    | "medium-vertical"
+    | "medium-horizontal"
+    | "small"
+    | "cross-sell" =
     variant === "horizontal"
       ? "bestseller"
       : variant === "featured"
@@ -50,17 +56,15 @@ export function ProductCard({
 
   // -------------------------------------------------------------
   // 1. BEST SELLER / CAROUSEL HORIZONTAL SPLIT
-  // Dimensions from spec:
-  // Desktop: 1048 × 589 px, p-10 (40px), gap 32px
-  // Tablet:  688 × 413 px
-  // Mobile:  320 × 512 px (stacked)
+  // Tag rosso di categoria SOLO ED ESCLUSIVAMENTE in questa sezione.
+  // Dimensioni da matrice: Desktop 1048 × 589 px, p-10 (40px) uniforme, gap 32px
   // -------------------------------------------------------------
   if (activeVariant === "bestseller") {
     return (
       <article
-        className={`group relative w-full max-w-[320px] min-[810px]:max-w-[688px] min-[1200px]:max-w-[1048px] min-h-[512px] min-[810px]:min-h-[413px] min-[1200px]:min-h-[589px] bg-[#F9F9F9] rounded-[32px] p-6 sm:p-8 min-[810px]:py-8 min-[810px]:pr-8 min-[810px]:pl-[80px] min-[1200px]:py-10 min-[1200px]:pr-10 min-[1200px]:pl-[80px] flex flex-col min-[810px]:flex-row items-center justify-between gap-6 min-[1200px]:gap-8 border border-neutral-200/60 shadow-xs overflow-hidden transition-all duration-300 hover:shadow-md ${className}`.trim()}
+        className={`group relative w-full max-w-[320px] min-[810px]:max-w-[688px] min-[1200px]:max-w-[1048px] min-h-[512px] min-[810px]:min-h-[413px] min-[1200px]:min-h-[514px] min-[1200px]:h-[514px] bg-[#F9F9F9] rounded-[32px] p-6 sm:p-8 min-[1200px]:p-10 flex flex-col min-[810px]:flex-row items-center justify-between gap-6 min-[1200px]:gap-8 border border-neutral-200/60 shadow-xs overflow-hidden transition-all duration-300 hover:shadow-md ${className}`.trim()}
       >
-        {/* Left: Text Block (max-w-[344px]) */}
+        {/* Left: Text Block (max-w-[344px]) with Category Tag */}
         <div className="w-full min-[810px]:w-auto min-[810px]:max-w-[344px] flex flex-col items-start justify-center z-10 shrink-0">
           <span className="text-[#E51A24] text-sm font-medium tracking-wide mb-2 block uppercase">
             {formattedCategory}
@@ -82,14 +86,14 @@ export function ProductCard({
           </Button>
         </div>
 
-        {/* Right: Product Visual Slot (434 × 485.36 px target bounding box) */}
-        <div className="relative w-full min-[810px]:w-[340px] min-[1200px]:w-[434px] h-[260px] min-[810px]:h-[350px] min-[1200px]:h-[485px] flex items-center justify-center">
+        {/* Right: Product Visual Slot (calibrato max-h-[380px] per eliminare vuoti) */}
+        <div className="relative w-full min-[810px]:w-[340px] min-[1200px]:w-[434px] h-[260px] min-[810px]:h-[340px] min-[1200px]:h-[380px] max-h-[380px] flex items-center justify-center">
           <Image
             src={imageSource}
             alt={product.name}
             fill
             sizes="(max-width: 810px) 320px, (max-width: 1200px) 340px, 434px"
-            className="object-contain p-2 transition-transform duration-500 ease-out group-hover:scale-105"
+            className="object-contain max-h-[380px] p-2 transition-transform duration-500 ease-out group-hover:scale-105"
             priority={priority}
           />
         </div>
@@ -99,21 +103,55 @@ export function ProductCard({
 
   // -------------------------------------------------------------
   // 2. LARGE (Kettle 1.7 L / Category Highlight Banner)
-  // Dimensions from spec:
-  // Desktop: 1106 × 621 px (16:9 horizontal)
-  // Tablet:  746 × 419.62 px
-  // Mobile:  358 × 537 px (vertical)
+  // NO category tag. Supporta lifestyleImage full-bleed.
+  // Desktop padding: pt/pb 40px, pl 64px.
   // -------------------------------------------------------------
   if (activeVariant === "large") {
+    if (lifestyleImage) {
+      return (
+        <article
+          className={`group relative w-full min-h-[537px] min-[810px]:min-h-[420px] min-[1200px]:min-h-[621px] rounded-[32px] overflow-hidden flex flex-col min-[810px]:flex-row items-stretch justify-between shadow-xs border border-neutral-200/60 transition-all duration-300 hover:shadow-md ${className}`.trim()}
+        >
+          {/* Background Lifestyle Image */}
+          <div className="absolute inset-0 w-full h-full">
+            <Image
+              src={lifestyleImage}
+              alt={product.name}
+              fill
+              sizes="(min-width: 1200px) 1200px, 100vw"
+              className="object-cover object-center"
+              priority={priority}
+            />
+          </div>
+
+          {/* Left: Text Block (senza tag di categoria - desktop: pt/pb 40px, pl 64px) */}
+          <div className="relative z-10 p-6 sm:p-10 min-[1200px]:py-10 min-[1200px]:pl-16 min-[1200px]:pr-8 flex flex-col justify-center items-start min-[810px]:w-1/2 min-[1200px]:max-w-[440px]">
+            <h3 className="text-2xl sm:text-3xl min-[1200px]:text-4xl font-bold text-gray-950 tracking-tight mb-3 sm:mb-4">
+              {product.name}
+            </h3>
+            <p className="text-sm min-[1200px]:text-base text-gray-700 leading-relaxed mb-6 min-[1200px]:mb-8 max-w-[344px]">
+              {product.shortDescription}
+            </p>
+            <Button
+              href={targetHref}
+              variant="primary"
+              size="md"
+              aria-label={`Learn more about ${product.name}`}
+              className="px-6 py-2.5 font-semibold shadow-xs"
+            >
+              Learn more
+            </Button>
+          </div>
+        </article>
+      );
+    }
+
     return (
       <article
-        className={`group relative w-full max-w-[358px] min-[810px]:max-w-[746px] min-[1200px]:max-w-[1106px] min-h-[537px] min-[810px]:min-h-[420px] min-[1200px]:min-h-[621px] bg-[#F9F9F9] rounded-[32px] overflow-hidden flex flex-col min-[810px]:flex-row items-stretch justify-between border border-neutral-200/60 shadow-xs transition-all duration-300 hover:shadow-md ${className}`.trim()}
+        className={`group relative w-full min-h-[537px] min-[810px]:min-h-[420px] min-[1200px]:min-h-[621px] bg-[#F9F9F9] rounded-[32px] overflow-hidden flex flex-col min-[810px]:flex-row items-stretch justify-between border border-neutral-200/60 shadow-xs transition-all duration-300 hover:shadow-md ${className}`.trim()}
       >
-        {/* Left: Text Block */}
-        <div className="p-6 sm:p-10 min-[1200px]:p-16 flex flex-col justify-center items-start min-[810px]:w-1/2 min-[1200px]:max-w-[420px] z-10">
-          <span className="text-[#E51A24] text-sm font-medium tracking-wide mb-2 block uppercase">
-            {formattedCategory}
-          </span>
+        {/* Left: Text Block (desktop: pt/pb 40px, pl 64px) */}
+        <div className="p-6 sm:p-10 min-[1200px]:py-10 min-[1200px]:pl-16 min-[1200px]:pr-8 flex flex-col justify-center items-start min-[810px]:w-1/2 min-[1200px]:max-w-[420px] z-10">
           <h3 className="text-2xl sm:text-3xl min-[1200px]:text-4xl font-bold text-gray-950 tracking-tight mb-3 sm:mb-4">
             {product.name}
           </h3>
@@ -147,23 +185,58 @@ export function ProductCard({
   }
 
   // -------------------------------------------------------------
-  // 3. MEDIUM VERTICAL (Spotlight: Blenders, Indoor Camera)
-  // Dimensions from spec:
-  // Desktop: 540 × 720 px (or 570 × 720 px)
-  // Internal Padding: pt-16 px-20 pb-10, gap 32px
-  // Tablet:  365 × 486.67 px
-  // Mobile:  358 × 537 px
+  // 3. MEDIUM VERTICAL (Indoor Camera shelf / Blenders)
+  // NO category tag. Supporta lifestyleImage full-bleed per Indoor Camera.
   // -------------------------------------------------------------
   if (activeVariant === "medium-vertical") {
+    if (lifestyleImage) {
+      return (
+        <article
+          className={`group relative w-full min-h-[537px] min-[810px]:min-h-[486px] min-[1200px]:min-h-[720px] rounded-[32px] overflow-hidden flex flex-col items-center text-center justify-between shadow-xs border border-neutral-200/60 transition-all duration-300 hover:shadow-md ${className}`.trim()}
+        >
+          {/* Background Full-bleed Lifestyle Image */}
+          <div className="absolute inset-0 w-full h-full">
+            <Image
+              src={lifestyleImage}
+              alt={product.name}
+              fill
+              sizes="(min-width: 1200px) 570px, 100vw"
+              className="object-cover object-center"
+              priority={priority}
+            />
+          </div>
+
+          {/* Centered Top Text Block (senza stacchi artificiali né tag di categoria) */}
+          <div className="relative z-10 pt-10 min-[810px]:pt-12 min-[1200px]:pt-16 px-6 sm:px-10 min-[1200px]:px-14 flex flex-col items-center max-w-[380px]">
+            <h3 className="text-2xl min-[1200px]:text-3xl font-bold text-gray-950 tracking-tight mb-3">
+              {product.name}
+            </h3>
+            <p className="text-sm text-gray-700 leading-relaxed mb-6">
+              {product.shortDescription}
+            </p>
+            <Button
+              href={targetHref}
+              variant="primary"
+              size="md"
+              aria-label={`Learn more about ${product.name}`}
+              className="px-6 py-2.5 font-semibold shadow-xs"
+            >
+              Learn more
+            </Button>
+          </div>
+
+          {/* Spacer to keep camera on shelf clear */}
+          <div className="relative w-full h-[280px] min-[1200px]:h-[380px] pointer-events-none" />
+        </article>
+      );
+    }
+
     return (
       <article
-        className={`group relative w-full max-w-[358px] min-[810px]:max-w-[365px] min-[1200px]:max-w-[570px] min-h-[537px] min-[810px]:min-h-[486px] min-[1200px]:min-h-[720px] bg-[#F9F9F9] rounded-[32px] pt-10 min-[810px]:pt-12 min-[1200px]:pt-16 px-6 sm:px-12 min-[1200px]:px-20 pb-8 min-[1200px]:pb-10 flex flex-col items-center text-center justify-between gap-8 border border-neutral-200/60 shadow-xs overflow-hidden transition-all duration-300 hover:shadow-md ${className}`.trim()}
+        className={`group relative w-full min-h-[537px] min-[810px]:min-h-[486px] min-[1200px]:min-h-[720px] bg-[#F9F9F9] rounded-[32px] pt-10 min-[810px]:pt-12 min-[1200px]:pt-16 px-6 sm:px-12 min-[1200px]:px-20 pb-8 min-[1200px]:pb-10 flex flex-col items-center text-center justify-between gap-8 border border-neutral-200/60 shadow-xs overflow-hidden transition-all duration-300 hover:shadow-md ${className}`.trim()}
       >
-        {/* Top Text Block (max-w-[344px]) */}
+        {/* Top Text Block (senza tag di categoria) */}
         <div className="flex flex-col items-center max-w-[344px] z-10">
-          <span className="text-[#E51A24] text-sm font-medium tracking-wide mb-2 block uppercase">
-            {formattedCategory}
-          </span>
           <h3 className="text-2xl font-bold text-gray-950 tracking-tight mb-3 line-clamp-2">
             {product.name}
           </h3>
@@ -197,21 +270,17 @@ export function ProductCard({
   }
 
   // -------------------------------------------------------------
-  // 4. MEDIUM HORIZONTAL (Stacked security cards: Outdoor Cam, Doorbell)
-  // Dimensions from spec:
-  // Desktop: 254 × 574 px
+  // 4. MEDIUM HORIZONTAL (Outdoor Camera, Doorbell)
+  // NO category tag. Titolo a capo naturalmente su 2 righe (no line-clamp).
   // -------------------------------------------------------------
   if (activeVariant === "medium-horizontal") {
     return (
       <article
-        className={`group relative w-full max-w-[574px] min-h-[254px] bg-[#F9F9F9] rounded-[32px] p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 min-[1200px]:gap-8 border border-neutral-200/60 shadow-xs overflow-hidden transition-all duration-300 hover:shadow-md ${className}`.trim()}
+        className={`group relative w-full min-h-[254px] bg-[#F9F9F9] rounded-[32px] p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 min-[1200px]:gap-8 border border-neutral-200/60 shadow-xs overflow-hidden transition-all duration-300 hover:shadow-md ${className}`.trim()}
       >
-        {/* Left: Text Block */}
-        <div className="w-full sm:w-1/2 max-w-[300px] flex flex-col items-start justify-center z-10 shrink-0">
-          <span className="text-[#E51A24] text-xs sm:text-sm font-medium tracking-wide mb-1.5 block uppercase">
-            {formattedCategory}
-          </span>
-          <h3 className="text-xl sm:text-2xl font-bold text-gray-950 tracking-tight mb-2 line-clamp-1">
+        {/* Left: Text Block (senza tag di categoria, titolo su due righe) */}
+        <div className="w-full sm:w-1/2 max-w-[340px] flex flex-col items-start justify-center z-10 shrink-0">
+          <h3 className="text-xl sm:text-2xl font-bold text-gray-950 tracking-tight mb-2 leading-snug">
             {product.name}
           </h3>
           <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4 line-clamp-2">
@@ -275,21 +344,28 @@ export function ProductCard({
 
   // -------------------------------------------------------------
   // 6. SMALL (Accessories 3-column Grid)
-  // Dimensions from spec:
-  // Desktop: 450 × 614.7 px (~3:4 vertical stacked)
-  // Tablet:  238 × 457 px
-  // Mobile:  colonna fluida / stacked
+  // NO category tag. Immagine in alto, testo allineato a sinistra in basso.
+  // Dimensioni compatte e calibrate per evitare vuoti.
   // -------------------------------------------------------------
   return (
     <article
-      className={`group relative w-full max-w-[450px] min-h-[480px] min-[810px]:min-h-[457px] min-[1200px]:min-h-[614px] bg-[#F9F9F9] rounded-[32px] p-6 sm:p-8 min-[1200px]:p-10 flex flex-col items-center text-center justify-between border border-neutral-200/60 shadow-xs overflow-hidden transition-all duration-300 hover:shadow-md ${className}`.trim()}
+      className={`group relative w-full max-w-[450px] min-h-[460px] min-[810px]:min-h-[440px] min-[1200px]:min-h-[520px] min-[1200px]:h-[520px] bg-[#F9F9F9] rounded-[32px] p-6 sm:p-8 min-[1200px]:p-8 flex flex-col justify-between items-start border border-neutral-200/60 shadow-xs overflow-hidden transition-all duration-300 hover:shadow-md ${className}`.trim()}
     >
-      {/* Top Text Block (max-w-[344px]) */}
-      <div className="flex flex-col items-center max-w-[344px] mb-6 z-10">
-        <span className="text-[#E51A24] text-sm font-medium tracking-wide mb-2 block uppercase">
-          {formattedCategory}
-        </span>
-        <h3 className="text-xl sm:text-2xl font-bold text-gray-950 tracking-tight mb-2.5 line-clamp-2">
+      {/* Top Product Visual Slot */}
+      <div className="relative w-full h-[200px] min-[810px]:h-[190px] min-[1200px]:h-[250px] flex items-center justify-center mb-4">
+        <Image
+          src={imageSource}
+          alt={product.name}
+          fill
+          sizes="(max-width: 810px) 300px, (max-width: 1200px) 238px, 450px"
+          className="object-contain p-2 transition-transform duration-500 ease-out group-hover:scale-105"
+          priority={priority}
+        />
+      </div>
+
+      {/* Bottom Text Block (allineato a sinistra, senza tag di categoria) */}
+      <div className="w-full flex flex-col items-start z-10">
+        <h3 className="text-xl sm:text-2xl font-bold text-gray-950 tracking-tight mb-2 line-clamp-2">
           {product.name}
         </h3>
         <p className="text-sm text-gray-600 leading-relaxed mb-6 line-clamp-2">
@@ -304,18 +380,6 @@ export function ProductCard({
         >
           Learn more
         </Button>
-      </div>
-
-      {/* Bottom Product Visual Slot */}
-      <div className="relative w-full h-[220px] sm:h-[260px] min-[1200px]:h-[300px] flex items-center justify-center p-2">
-        <Image
-          src={imageSource}
-          alt={product.name}
-          fill
-          sizes="(max-width: 810px) 300px, (max-width: 1200px) 238px, 450px"
-          className="object-contain p-2 transition-transform duration-500 ease-out group-hover:scale-105"
-          priority={priority}
-        />
       </div>
     </article>
   );

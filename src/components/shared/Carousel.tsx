@@ -46,14 +46,14 @@ export function Carousel({
     const el = scrollRef.current;
     if (!el) return;
     const cardWidth = el.firstElementChild?.clientWidth || 500;
-    el.scrollBy({ left: -(cardWidth + 24), behavior: "smooth" });
+    el.scrollBy({ left: -(cardWidth + 32), behavior: "smooth" });
   };
 
   const scrollNext = () => {
     const el = scrollRef.current;
     if (!el) return;
     const cardWidth = el.firstElementChild?.clientWidth || 500;
-    el.scrollBy({ left: cardWidth + 24, behavior: "smooth" });
+    el.scrollBy({ left: cardWidth + 32, behavior: "smooth" });
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -71,12 +71,12 @@ export function Carousel({
   const isCrossSell = cardVariant === "cross-sell";
 
   const trackPaddingClasses = isCrossSell
-    ? "w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12"
-    : "pl-[max(16px,calc(50%-160px))] pr-[max(16px,calc(50%-160px))] min-[810px]:pl-[calc(50%-344px)] min-[810px]:pr-[calc(50%-344px)] min-[1200px]:pl-[calc(50%-524px)] min-[1200px]:pr-[calc(50%-524px)]";
+    ? "w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 scroll-pl-4 sm:scroll-pl-6 md:scroll-pl-10 lg:scroll-pl-12"
+    : "w-full pl-4 sm:pl-6 md:pl-10 lg:pl-[max(3rem,calc(50%-37rem))] pr-4 sm:pr-6 md:pr-10 lg:pr-[max(3rem,calc(50%-37rem))] scroll-pl-4 sm:scroll-pl-6 md:scroll-pl-10 lg:scroll-pl-[max(3rem,calc(50%-37rem))]";
 
   const slideClasses = isCrossSell
     ? "w-[220px] sm:w-[240px] min-[1200px]:w-[260px] shrink-0 snap-start flex justify-center"
-    : "w-[320px] min-[810px]:w-[688px] min-[1200px]:w-[1048px] shrink-0 snap-center flex justify-center";
+    : "w-[320px] min-[810px]:w-[688px] min-[1200px]:w-[1048px] shrink-0 snap-start flex justify-center";
 
   return (
     <div
@@ -90,7 +90,7 @@ export function Carousel({
         ref={scrollRef}
         tabIndex={0}
         aria-label="Scrollable list of best seller products"
-        className={`flex gap-[24px] overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 outline-none focus-visible:ring-2 focus-visible:ring-black [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden ${trackPaddingClasses}`}
+        className={`flex gap-[32px] overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 outline-none focus-visible:ring-2 focus-visible:ring-black [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden ${trackPaddingClasses}`}
       >
         {products.map((product, idx) => (
           <div

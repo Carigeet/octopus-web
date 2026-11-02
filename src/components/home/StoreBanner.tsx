@@ -4,42 +4,49 @@ import { Button } from "@/components/common/Button";
 
 export function StoreBanner() {
   return (
-    <section className="w-full bg-brand-red text-white py-14 sm:py-20 overflow-hidden" id="where-to-buy">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-10">
+    <section
+      className="w-full bg-[#D01A1F] text-white relative overflow-hidden"
+      id="where-to-buy"
+    >
+      {/* Container aligned with site grid */}
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 flex flex-col md:flex-row items-start md:items-center justify-between min-h-[440px] sm:min-h-[500px] md:min-h-[560px] lg:min-h-[620px] relative z-10 pt-14 sm:pt-20 pb-8 md:pb-0">
         {/* Left Column: Branding, Title & CTA */}
-        <div className="flex flex-col items-start max-w-lg z-10">
-          <span className="text-white/90 text-sm sm:text-base font-medium mb-1">
+        <div className="flex flex-col items-start max-w-lg z-10 py-6 md:py-16">
+          <span className="text-white/90 text-sm sm:text-base font-medium mb-1 tracking-wide">
             Find us at
           </span>
-          <div className="flex items-center gap-2 mb-6">
-            <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
+          <div className="flex items-center gap-2.5 mb-8">
+            <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight lowercase">
               the warehouse
             </span>
-            <span className="text-2xl sm:text-3xl font-black text-white/90 tracking-tighter">
-              {"//"}
-            </span>
+            <div className="inline-flex items-center justify-center bg-white px-2.5 py-1 rounded-xl shadow-xs">
+              <span className="text-[#D01A1F] font-black text-xl tracking-tighter italic leading-none">
+                {"//"}
+              </span>
+            </div>
           </div>
 
           <Button
             href="#store-locator"
             variant="white"
             size="md"
-            className="px-6 py-3 font-semibold shadow-xs"
+            className="px-7 py-3.5 font-semibold text-base shadow-sm hover:bg-neutral-100 transition-colors"
           >
             Find your nearest store
           </Button>
         </div>
+      </div>
 
-        {/* Right Column: Products Display */}
-        <div className="relative w-full md:w-7/12 min-h-[260px] sm:min-h-[340px] md:min-h-[380px] flex items-center justify-center">
-          <Image
-            src="/images/banners/warehouse.png"
-            alt="Octopus kitchen appliances available at The Warehouse"
-            fill
-            sizes="(min-width: 1200px) 50vw, (min-width: 810px) 50vw, 100vw"
-            className="object-contain object-center md:object-right"
-          />
-        </div>
+      {/* Right Product Image: grande, copre tutto a destra e tocca il fondo attaccato al footer */}
+      <div className="relative w-full h-[320px] sm:h-[420px] md:absolute md:top-0 md:bottom-0 md:right-0 md:h-full md:w-[62%] lg:w-[60%] xl:w-[58%] pointer-events-none md:[mask-image:linear-gradient(to_right,transparent_0%,black_15%,black_100%)]">
+        <Image
+          src="/images/banners/warehouse.png"
+          alt="Octopus kitchen appliances available at The Warehouse"
+          fill
+          sizes="(max-width: 810px) 100vw, 60vw"
+          className="object-cover object-bottom md:object-right-bottom"
+          priority={false}
+        />
       </div>
     </section>
   );

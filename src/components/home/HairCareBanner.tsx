@@ -15,25 +15,22 @@ export function HairCareBanner({ product }: HairCareBannerProps) {
   const targetHref = product ? `/products/${product.slug}` : "/products/ionic-hair-dryer";
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 py-8 sm:py-12">
-      <div className="relative w-full rounded-[32px] overflow-hidden bg-[#D9BBA0] min-h-[440px] md:min-h-[500px] flex items-center shadow-xs border border-neutral-300/40">
-        {/* Background Image of model with hair dryer positioned on the right */}
-        <div className="absolute inset-0 w-full h-full">
-          <Image
-            src="/images/banners/hair-dryer-banner.png"
-            alt={title}
-            fill
-            sizes="(min-width: 1200px) 1200px, 100vw"
-            className="object-cover object-right"
-            priority={false}
-          />
-        </div>
+    <section className="w-full relative overflow-hidden bg-[#D9BBA0]">
+      {/* Background Image: full bleed edge-to-edge */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none">
+        <Image
+          src="/images/banners/hair-dryer-banner.png"
+          alt={title}
+          fill
+          sizes="100vw"
+          className="object-cover object-right"
+          priority={false}
+        />
+      </div>
 
-        {/* Left Text Content */}
-        <div className="relative z-10 p-8 sm:p-12 md:p-16 max-w-lg flex flex-col items-start bg-gradient-to-r from-[#D9BBA0]/80 via-[#D9BBA0]/40 to-transparent md:bg-none rounded-[32px]">
-          <span className="text-[#E51A24] text-sm font-semibold tracking-wide mb-2 uppercase">
-            Hair Care
-          </span>
+      {/* Grid container: allinea il testo con la griglia del sito */}
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 relative z-10 min-h-[440px] md:min-h-[500px] lg:min-h-[560px] flex items-center">
+        <div className="max-w-md lg:max-w-lg flex flex-col items-start py-12 md:py-16 bg-gradient-to-r from-[#D9BBA0]/85 via-[#D9BBA0]/40 to-transparent md:bg-none rounded-2xl">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-dark mb-4 leading-tight">
             {title}
           </h2>
@@ -45,7 +42,7 @@ export function HairCareBanner({ product }: HairCareBannerProps) {
             variant="primary"
             size="md"
             aria-label={`Learn more about ${title}`}
-            className="px-7 py-3 shadow-xs"
+            className="px-7 py-3 shadow-xs font-semibold"
           >
             Learn more
           </Button>

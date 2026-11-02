@@ -4,6 +4,7 @@ import {
   getBestSellers,
   getCategories,
 } from "@/lib/products";
+import { Product } from "@/types/product";
 import { Hero } from "@/components/home/Hero";
 import { BestSellers } from "@/components/home/BestSellers";
 import { SectionHeader } from "@/components/common/SectionHeader";
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const [allProducts, bestSellers, categories] = await Promise.all([
+  const [allProducts, defaultBestSellers, categories] = await Promise.all([
     getAllProducts(),
     getBestSellers(),
     getCategories(),
@@ -28,9 +29,21 @@ export default async function Home() {
   // Helper product lookups by slug
   const findProduct = (slug: string) => allProducts.find((p) => p.slug === slug);
 
+  // Best sellers ordered sequence (da mockup Figma: 1° Air Fryer 5.7 L, 2° Indoor Camera)
+  const orderedBestSellers = [
+    findProduct("air-fryer-5-7l"),
+    findProduct("indoor-camera"),
+    findProduct("ionic-hair-dryer"),
+    findProduct("countertop-blender"),
+    findProduct("kettle-1-7l"),
+  ].filter(Boolean) as Product[];
+
+  const bestSellersList =
+    orderedBestSellers.length > 0 ? orderedBestSellers : defaultBestSellers;
+
   // Kitchen section products
   const kettle = findProduct("kettle-1-7l");
-  const portableBlender = findProduct("portable-blender") || findProduct("countertop-blender");
+  const portableBlender = findProduct("portable-blender");
   const countertopBlender = findProduct("countertop-blender");
 
   // Hair care banner product
@@ -47,14 +60,14 @@ export default async function Home() {
   const magneticStation = findProduct("magnetic-charging-station");
 
   return (
-    <div className="w-full flex flex-col flex-1 pb-16">
-      {/* 1. Full-Bleed Macro Hero (da 1.png) */}
+    <div className="w-full flex flex-col flex-1">
+      {/* 1. Full-Bleed Macro Hero (da 1.png con navbar overlay) */}
       <Hero />
 
-      {/* 2. Best Sellers Section with Horizontal Carousel (da 1.png) */}
-      <BestSellers products={bestSellers} />
+      {/* 2. Best Sellers Section con Air Fryer 5.7 L al 1° posto e Indoor Camera al 2° */}
+      <BestSellers products={bestSellersList} />
 
-      {/* 3. Kitchen Bento Grid Section (da 1.png & 2.png) */}
+      {/* 3. Kitchen Bento Grid Section (Kettle lifestyle + 2 Blenders verticali) */}
       <section id="kitchen" className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 py-8 sm:py-12">
         <SectionHeader
           title="Kitchen"
@@ -64,11 +77,12 @@ export default async function Home() {
         />
 
         <div className="flex flex-col gap-6">
-          {/* Top Featured Card: Kettle 1.7 L */}
+          {/* Top Featured Card: Kettle 1.7 L con lifestyle reale versato */}
           {kettle && (
             <ProductCard
               product={kettle}
               variant="large"
+              lifestyleImage="/images/products/kettle-lifestyle.png"
               priority={false}
             />
           )}
@@ -91,12 +105,12 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 4. Hair Care Interstitial Banner (da 3.png) */}
-      <div id="hair-care">
+      {/* 4. Hair Care Interstitial Banner (senza tag, modella a destra - full width) */}
+      <div id="hair-care" className="w-full">
         <HairCareBanner product={hairDryer} />
       </div>
 
-      {/* 5. Home Security Asymmetric Bento Grid Section (da 3.png) */}
+      {/* 5. Home Security Asymmetric Bento Grid Section */}
       <section id="home-security" className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 py-8 sm:py-12">
         <SectionHeader
           title="Home Security"
@@ -105,20 +119,21 @@ export default async function Home() {
           ctaHref="/#home-security"
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-          {/* Left Column (Full-height featured card): Indoor Camera */}
-          <div className="lg:col-span-5 h-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+          {/* Left Column: Indoor Camera su mensola in legno */}
+          <div className="w-full h-full">
             {indoorCam && (
               <ProductCard
                 product={indoorCam}
                 variant="medium-vertical"
+                lifestyleImage="/images/products/indoor-cam-shelf.png"
                 className="h-full"
               />
             )}
           </div>
 
-          {/* Right Column (2 stacked horizontal cards): Outdoor Camera & Video Doorbell */}
-          <div className="lg:col-span-7 flex flex-col gap-6 justify-between">
+          {/* Right Column: Outdoor Camera & Video Doorbell (titoli naturali su due righe) */}
+          <div className="w-full flex flex-col gap-6 justify-between h-full">
             {outdoorCam && (
               <ProductCard
                 product={outdoorCam}
@@ -137,7 +152,7 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 6. Accessories 3-Column Section (da 4.png) */}
+      {/* 6. Accessories 3-Column Section (immagini in alto, schede compatte) */}
       <section id="accessories" className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 py-8 sm:py-12">
         <SectionHeader
           title="Accessories"
@@ -168,10 +183,10 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 7. Explore All Categories (da 4.png) */}
+      {/* 7. Explore All Categories */}
       <ExploreCategories categories={categories} />
 
-      {/* 8. Store Locator Banner (da 4.png) */}
+      {/* 8. Store Locator Banner (sfondo unificato #D01A1F con maschera continua) */}
       <StoreBanner />
     </div>
   );

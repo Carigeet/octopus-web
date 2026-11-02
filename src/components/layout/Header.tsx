@@ -82,8 +82,8 @@ export function Header() {
 
   return (
     <>
-      <header className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl">
-        <div className="flex items-center justify-between px-6 py-3 bg-white/80 backdrop-blur-md rounded-full shadow-lg border border-black/5 transition-all">
+      <header className="fixed top-5 inset-x-0 z-50 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 pointer-events-none">
+        <div className="w-full pointer-events-auto flex items-center justify-between px-6 py-3 bg-white/80 backdrop-blur-md rounded-full shadow-lg border border-black/5 transition-all">
           {/* Brand Logo: Compact mark on mobile (< 810px), full logo on tablet/desktop */}
           <div className="flex items-center">
             <div className="block min-[810px]:hidden">

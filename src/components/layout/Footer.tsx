@@ -4,8 +4,8 @@ import { OctopusLogo } from "@/components/common/OctopusLogo";
 
 export function Footer() {
   return (
-    <footer className="w-full bg-brand-red text-white" aria-label="Global Footer">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 py-12 md:py-16">
+    <footer className="w-full bg-[#D01A1F] text-white" aria-label="Global Footer">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 py-12 md:py-16">
         {/* Main Grid Content */}
         <div className="grid grid-cols-1 min-[810px]:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-white/20">
           {/* Brand Column (Left) */}
@@ -104,4 +104,3 @@ export function Footer() {
 }
 
 export default Footer;
-

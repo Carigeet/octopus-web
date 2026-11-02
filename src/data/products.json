@@ -212,7 +212,7 @@
       }
     ],
     "lifestyleImages": {
-      "top": "/images/categories/kitchen-banner.png",
+      "top": "/images/products/kettle-lifestyle.png",
       "bottom": "/images/banners/warehouse.png"
     }
   },
@@ -354,7 +354,7 @@
       }
     ],
     "lifestyleImages": {
-      "top": "/images/products/home-security-family.jpg",
+      "top": "/images/products/indoor-cam-shelf.png",
       "bottom": "/images/products/security-camera-large.png"
     }
   },
