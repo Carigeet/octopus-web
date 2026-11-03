@@ -12,7 +12,7 @@ export function Hero() {
         src="/images/banners/hero-macro.png"
         alt="Octopus Ionic Hair Dryer"
         fill
-        priority={true}
+        preload
         sizes="100vw"
         className="object-cover object-center"
       />

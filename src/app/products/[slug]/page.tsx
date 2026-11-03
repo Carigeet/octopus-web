@@ -29,28 +29,34 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!product) {
     return {
-      title: "Product Not Found | Octopus",
+      title: "Product Not Found",
       description: "The requested Octopus product could not be found.",
+      robots: { index: false, follow: false },
     };
   }
 
   const description = product.description || product.shortDescription;
+  const url = `/products/${product.slug}`;
 
   return {
-    title: `${product.name} | Octopus`,
+    // Il suffisso " | Octopus" è aggiunto dal title.template del root layout
+    title: product.name,
     description,
+    alternates: { canonical: url },
     openGraph: {
       title: `${product.name} | Octopus`,
       description,
-      images: [
-        {
-          url: product.image,
-          width: 800,
-          height: 800,
-          alt: product.name,
-        },
-      ],
+      url,
+      siteName: "Octopus",
+      locale: "en_US",
       type: "website",
+      images: [{ url: product.image, alt: product.name }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${product.name} | Octopus`,
+      description,
+      images: [product.image],
     },
   };
 }
@@ -92,6 +98,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
         className="w-full max-w-[746px] xl:max-w-[1106px] mx-auto px-4 md:px-0 xl:px-0 py-8 sm:py-12"
         aria-label="Features and Lifestyle"
       >
+        <h2 className="sr-only">{product.name} features</h2>
         {/* Visual lifestyle 1 (Mobile: w 358px × h 477.33px, radius 16px) */}
         <div className="w-full max-w-[358px] h-[477.33px] min-h-[477.33px] md:max-w-none md:h-auto mx-auto rounded-[16px] md:rounded-3xl xl:rounded-[32px] overflow-hidden relative md:aspect-[16/10] xl:aspect-[16/9] md:min-h-[420px] xl:min-h-[620px] mb-6 md:mb-12 shadow-xs border border-neutral-200/60 bg-[#F9F9F9]">
           <Image
@@ -123,6 +130,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
         className="w-full max-w-[746px] xl:max-w-[1106px] mx-auto px-4 md:px-0 xl:px-0 pt-8 sm:pt-12 pb-[80px] xl:py-12"
         aria-label="Product Specifications and Manuals"
       >
+        <h2 className="sr-only">Specifications and downloads</h2>
         <ProductAccordion
           specs={product.specs}
           productName={product.name}

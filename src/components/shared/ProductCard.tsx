@@ -64,7 +64,7 @@ export function ProductCard({
   if (activeVariant === "bestseller") {
     return (
       <article
-        className={`group relative w-full max-w-[320px] md:max-w-[688px] xl:max-w-[1048px] min-h-[512px] md:min-h-[413px] md:h-[413px] xl:min-h-[589px] xl:h-[589px] bg-[#F9F9F9] rounded-[24px] md:rounded-[32px] xl:rounded-[32px] pt-[40px] px-[24px] pb-6 md:py-8 md:pl-10 md:pr-8 xl:p-10 xl:pl-[80px] flex flex-col md:flex-row xl:flex-row items-center justify-between gap-[24px] md:gap-6 xl:gap-8 border border-neutral-200/60 shadow-xs overflow-hidden transition-all duration-300 hover:shadow-md ${className}`.trim()}
+        className={`group relative w-full max-w-[320px] md:max-w-[688px] xl:max-w-[1106px] min-h-[512px] md:min-h-[413px] md:h-[413px] xl:min-h-[589px] xl:h-[589px] bg-[#F9F9F9] rounded-[24px] md:rounded-[32px] xl:rounded-[32px] pt-[40px] px-[24px] pb-6 md:py-8 md:pl-10 md:pr-8 xl:p-10 xl:pl-[80px] flex flex-col md:flex-row xl:flex-row items-center justify-between gap-[24px] md:gap-6 xl:gap-8 border border-neutral-200/60 shadow-xs overflow-hidden transition-all duration-300 hover:shadow-md ${className}`.trim()}
       >
         {/* Top on Mobile (Centered) / Left on Tablet & Desktop: Text Block with Category Tag */}
         <div className="w-full md:w-auto md:max-w-[344px] xl:max-w-[344px] flex flex-col items-center text-center md:items-start md:text-left xl:items-start xl:text-left justify-center z-10 shrink-0">
@@ -96,7 +96,7 @@ export function ProductCard({
             fill
             sizes="(max-width: 768px) 280px, (max-width: 1200px) 340px, 434px"
             className="object-contain max-h-[485px] p-2 transition-transform duration-500 ease-out group-hover:scale-105"
-            priority={priority}
+            preload={priority}
           />
         </div>
       </article>
@@ -124,7 +124,7 @@ export function ProductCard({
               fill
               sizes="(min-width: 1200px) 1106px, (min-width: 768px) 746px, 358px"
               className="object-cover object-bottom md:object-center"
-              priority={priority}
+              preload={priority}
             />
           </div>
 
@@ -181,7 +181,7 @@ export function ProductCard({
             fill
             sizes="(max-width: 768px) 310px, (max-width: 1200px) 373px, 550px"
             className="object-contain p-2 md:p-4 transition-transform duration-500 ease-out group-hover:scale-105"
-            priority={priority}
+            preload={priority}
           />
         </div>
       </article>
@@ -199,7 +199,7 @@ export function ProductCard({
     if (lifestyleImage) {
       return (
         <article
-          className={`group relative w-full max-w-[358px] md:max-w-[365px] xl:max-w-[540px] xl:w-[540px] mx-auto min-h-[477.33px] md:min-h-[487px] md:h-[487px] xl:min-h-[720px] xl:h-[720px] rounded-[16px] md:rounded-[32px] xl:rounded-[32px] overflow-hidden flex flex-col items-center text-center justify-between shadow-xs border border-neutral-200/60 transition-all duration-300 hover:shadow-md ${className}`.trim()}
+          className={`group relative w-full max-w-[358px] md:max-w-[365px] xl:max-w-none xl:w-full mx-auto min-h-[477.33px] md:min-h-[487px] md:h-[487px] xl:min-h-[720px] xl:h-[720px] rounded-[16px] md:rounded-[32px] xl:rounded-[32px] overflow-hidden flex flex-col items-center text-center justify-between shadow-xs border border-neutral-200/60 transition-all duration-300 hover:shadow-md ${className}`.trim()}
         >
           {/* Background Full-bleed Lifestyle Image */}
           <div className="absolute inset-0 w-full h-full">
@@ -209,7 +209,7 @@ export function ProductCard({
               fill
               sizes="(min-width: 1200px) 540px, (min-width: 768px) 365px, 358px"
               className="object-cover object-center"
-              priority={priority}
+              preload={priority}
             />
           </div>
 
@@ -240,7 +240,7 @@ export function ProductCard({
 
     return (
       <article
-        className={`group relative w-full max-w-[358px] md:max-w-[365px] xl:max-w-[540px] xl:w-[540px] mx-auto min-h-[537px] md:min-h-[487px] xl:min-h-[720px] xl:h-[720px] bg-[#F9F9F9] rounded-[24px] md:rounded-[32px] xl:rounded-[32px] pt-[40px] px-[24px] pb-6 md:pt-8 md:px-6 md:pb-4 xl:pt-16 xl:px-[80px] xl:pb-10 flex flex-col items-center text-center justify-between xl:justify-start gap-[24px] md:gap-0 xl:gap-[60px] border border-neutral-200/60 shadow-xs overflow-hidden transition-all duration-300 hover:shadow-md ${className}`.trim()}
+        className={`group relative w-full max-w-[358px] md:max-w-[365px] xl:max-w-none xl:w-full mx-auto min-h-[537px] md:min-h-[487px] xl:min-h-[720px] xl:h-[720px] bg-[#F9F9F9] rounded-[24px] md:rounded-[32px] xl:rounded-[32px] pt-[40px] px-[24px] pb-6 md:pt-8 md:px-6 md:pb-4 xl:pt-16 xl:px-[80px] xl:pb-10 flex flex-col items-center text-center justify-between xl:justify-start gap-[24px] md:gap-0 xl:gap-[60px] border border-neutral-200/60 shadow-xs overflow-hidden transition-all duration-300 hover:shadow-md ${className}`.trim()}
       >
         {/* Top Text Block (centrato in alto, senza tag di categoria) */}
         <div className="flex flex-col items-center text-center max-w-[344px] z-10 shrink-0">
@@ -269,7 +269,7 @@ export function ProductCard({
             fill
             sizes="(max-width: 768px) 260px, (max-width: 1200px) 298px, 434px"
             className="object-contain xl:p-2 transition-transform duration-500 ease-out group-hover:scale-105"
-            priority={priority}
+            preload={priority}
           />
         </div>
       </article>
@@ -284,7 +284,7 @@ export function ProductCard({
   if (activeVariant === "medium-horizontal") {
     return (
       <article
-        className={`group relative w-full xl:w-[540px] min-h-[254px] xl:h-[348px] bg-[#F9F9F9] rounded-[24px] md:rounded-[32px] xl:rounded-[32px] pt-[40px] px-[24px] pb-6 sm:p-8 xl:p-8 flex flex-col sm:flex-row xl:flex-row items-center text-center sm:text-left xl:text-left justify-between gap-[24px] xl:gap-8 border border-neutral-200/60 shadow-xs overflow-hidden transition-all duration-300 hover:shadow-md ${className}`.trim()}
+        className={`group relative w-full xl:w-full min-h-[254px] xl:h-[348px] bg-[#F9F9F9] rounded-[24px] md:rounded-[32px] xl:rounded-[32px] pt-[40px] px-[24px] pb-6 sm:p-8 xl:p-8 flex flex-col sm:flex-row xl:flex-row items-center text-center sm:text-left xl:text-left justify-between gap-[24px] xl:gap-8 border border-neutral-200/60 shadow-xs overflow-hidden transition-all duration-300 hover:shadow-md ${className}`.trim()}
       >
         {/* Left: Text Block (senza tag di categoria, titolo su due righe) */}
         <div className="w-full sm:w-1/2 max-w-[340px] flex flex-col items-center sm:items-start xl:items-start justify-center z-10 shrink-0">
@@ -313,7 +313,7 @@ export function ProductCard({
             fill
             sizes="(max-width: 810px) 200px, 200px"
             className="object-contain p-2 transition-transform duration-500 ease-out group-hover:scale-105"
-            priority={priority}
+            preload={priority}
           />
         </div>
       </article>
@@ -337,12 +337,12 @@ export function ProductCard({
             fill
             sizes="260px"
             className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
-            priority={priority}
+            preload={priority}
           />
         </div>
-        <h4 className="text-base sm:text-lg font-bold text-gray-950 group-hover:text-brand-red transition-colors mb-1 line-clamp-1">
+        <h3 className="text-base sm:text-lg font-bold text-gray-950 group-hover:text-brand-red transition-colors mb-1 line-clamp-1">
           {product.name}
-        </h4>
+        </h3>
         <p className="text-xs sm:text-sm text-gray-600 line-clamp-2 leading-relaxed">
           {product.shortDescription}
         </p>
@@ -368,7 +368,7 @@ export function ProductCard({
           fill
           sizes="(max-width: 768px) 260px, (max-width: 1200px) 238px, 450px"
           className="object-contain p-2 transition-transform duration-500 ease-out group-hover:scale-105"
-          priority={priority}
+          preload={priority}
         />
       </div>
 

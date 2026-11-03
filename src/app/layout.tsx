@@ -3,37 +3,48 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
+const SITE_URL = "https://octopus-web.vercel.app";
+const SITE_TITLE = "Octopus | Premium Home & Lifestyle Appliances";
+const SITE_DESCRIPTION =
+  "Discover Octopus innovative kitchen appliances, smart home security, salon-quality hair care, and everyday accessories.";
+const SITE_OG_IMAGE = "/images/banners/hero-hair-dryer.png";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  applicationName: "Octopus",
   title: {
-    default: "Octopus | Premium Home & Lifestyle Appliances",
+    default: SITE_TITLE,
     template: "%s | Octopus",
   },
-  description:
-    "Discover Octopus innovative kitchen appliances, smart home security, salon-quality hair care, and everyday accessories.",
-  metadataBase: new URL("https://octopus-web.vercel.app"),
+  description: SITE_DESCRIPTION,
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
-    title: "Octopus | Premium Home & Lifestyle Appliances",
-    description:
-      "Discover Octopus innovative kitchen appliances, smart home security, salon-quality hair care, and everyday accessories.",
-    url: "https://octopus-web.vercel.app",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
     siteName: "Octopus",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "/images/banners/hero-hair-dryer.png",
-        width: 1200,
-        height: 630,
-        alt: "Octopus Lifestyle & Home Appliances",
+        url: SITE_OG_IMAGE,
+        width: 1600,
+        height: 900,
+        alt: "Octopus Ionic Hair Dryer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Octopus | Premium Home & Lifestyle Appliances",
-    description:
-      "Discover Octopus innovative kitchen appliances, smart home security, salon-quality hair care, and everyday accessories.",
-    images: ["/images/banners/hero-hair-dryer.png"],
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [SITE_OG_IMAGE],
   },
 };
 

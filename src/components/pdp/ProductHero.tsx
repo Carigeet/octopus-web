@@ -51,7 +51,7 @@ export function ProductHero({ product, className = "" }: ProductHeroProps) {
               src={product.image || "/images/products/placeholder-800x800.png"}
               alt={product.name}
               fill
-              priority
+              preload
               sizes="(max-width: 768px) 390px, (max-width: 1200px) 476px, 540px"
               className="object-contain"
             />

@@ -27,9 +27,20 @@
   --color-neutral-surface: #f3f4f6;
   --color-border-subtle: #e5e7eb;
 
+  /*
+   * Breakpoints tutti in px (stesse soglie di prima).
+   * `xl` custom era in px mentre sm/md/lg di default sono in rem: Tailwind ordina
+   * le media query per unità, quindi `md:`/`lg:` venivano emessi DOPO `xl:` e lo
+   * sovrascrivevano a >= 1200px (es. md:max-w-[746px] batteva xl:max-w-[1106px]).
+   * Con unità omogenee l'ordine è sm < md < lg < xl e `xl:` vince sempre su Desktop.
+   */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1536px;
   --breakpoint-tablet: 768px;
   --breakpoint-desktop: 1200px;
-  --breakpoint-xl: 1200px;
 }
 
 @layer base {

@@ -83,7 +83,7 @@ export function Carousel({
 
   const slideClasses = isCrossSell
     ? "w-[220px] sm:w-[240px] xl:w-[260px] shrink-0 snap-start flex justify-center"
-    : "w-[320px] md:w-[688px] xl:w-[1048px] shrink-0 snap-start flex justify-center";
+    : "w-[320px] md:w-[688px] xl:w-[1106px] shrink-0 snap-start flex justify-center";
 
   return (
     <div
@@ -96,10 +96,11 @@ export function Carousel({
       <div
         ref={scrollRef}
         tabIndex={0}
+        role="group"
         aria-label="Scrollable list of best seller products"
         className={`flex gap-[32px] overflow-x-auto snap-x snap-mandatory pb-4 outline-none focus-visible:ring-2 focus-visible:ring-black [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden ${trackPaddingClasses}`}
       >
-        {products.map((product, idx) => (
+        {products.map((product) => (
           <div
             key={product.id || product.slug}
             className={slideClasses}
@@ -107,7 +108,6 @@ export function Carousel({
             <ProductCard
               product={product}
               variant={cardVariant}
-              priority={idx === 0}
             />
           </div>
         ))}

@@ -24,7 +24,6 @@ export function HairCareBanner({ product }: HairCareBannerProps) {
           fill
           sizes="100vw"
           className="object-cover object-right-bottom md:object-right xl:object-right"
-          priority={false}
         />
       </div>
 

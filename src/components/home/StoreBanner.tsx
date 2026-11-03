@@ -51,7 +51,6 @@ export function StoreBanner({ className = "" }: StoreBannerProps) {
           fill
           sizes="(max-width: 810px) 100vw, 60vw"
           className="object-cover object-bottom md:object-right-bottom"
-          priority={false}
         />
       </div>
     </section>

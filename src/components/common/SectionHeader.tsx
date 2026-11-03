@@ -17,7 +17,7 @@ export function SectionHeader({
   className = "",
 }: SectionHeaderProps) {
   return (
-    <div className={`text-center mb-8 sm:mb-10 min-[1200px]:mb-12 max-w-3xl mx-auto px-4 ${className}`.trim()}>
+    <div className={`text-center mb-8 sm:mb-10 min-[1200px]:mb-12 max-w-3xl mx-auto px-4 xl:w-full xl:max-w-[1106px] xl:px-0 ${className}`.trim()}>
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#000000] mb-3 sm:mb-4">
         {title}
       </h2>

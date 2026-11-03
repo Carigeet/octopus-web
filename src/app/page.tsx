@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import {
   getAllProducts,
   getBestSellers,
@@ -12,12 +11,6 @@ import { ProductCard } from "@/components/shared/ProductCard";
 import { HairCareBanner } from "@/components/home/HairCareBanner";
 import { ExploreCategories } from "@/components/home/ExploreCategories";
 import { StoreBanner } from "@/components/home/StoreBanner";
-
-export const metadata: Metadata = {
-  title: "Octopus | Innovative Products for Everyday Living",
-  description:
-    "Explore Octopus premium ionic hair dryers, kitchen appliances, smart security cameras, and mobile accessories designed for modern living.",
-};
 
 export default async function Home() {
   const [allProducts, defaultBestSellers, categories] = await Promise.all([
@@ -86,7 +79,6 @@ export default async function Home() {
               product={kettle}
               variant="large"
               lifestyleImage="/images/products/kettle-lifestyle.png"
-              priority={false}
             />
           )}
 
@@ -131,7 +123,7 @@ export default async function Home() {
         {/* Desktop Bento Grid (>= 1200px): Asymmetric 50/50 Split */}
         <div className="hidden xl:grid xl:grid-cols-2 gap-6 items-stretch">
           {/* Left Column: Indoor Camera su mensola in legno */}
-          <div className="w-full h-full xl:w-[540px] xl:h-[720px]">
+          <div className="w-full h-full xl:w-full xl:h-[720px]">
             {indoorCam && (
               <ProductCard
                 product={indoorCam}
@@ -143,7 +135,7 @@ export default async function Home() {
           </div>
 
           {/* Right Column: Outdoor Camera & Video Doorbell (titoli naturali su due righe) */}
-          <div className="w-full flex flex-col gap-6 justify-between h-full xl:w-[540px] xl:h-[720px]">
+          <div className="w-full flex flex-col gap-6 justify-between h-full xl:w-full xl:h-[720px]">
             {outdoorCam && (
               <ProductCard
                 product={outdoorCam}
