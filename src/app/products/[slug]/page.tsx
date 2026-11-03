@@ -83,22 +83,22 @@ export default async function ProductDetailPage({ params }: PageProps) {
       : "/images/banners/placeholder-1600x900.png");
 
   return (
-    <div className="w-full flex flex-col flex-1 pb-16">
+    <div className="w-full flex flex-col flex-1 xl:pb-16">
       {/* 1. Buy Box / Product Hero */}
       <ProductHero product={product} />
 
       {/* 2. Lifestyle & Bento Feature Section */}
       <section
-        className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 py-8 sm:py-12"
+        className="w-full max-w-[746px] xl:max-w-[1106px] mx-auto px-4 md:px-0 xl:px-0 py-8 sm:py-12"
         aria-label="Features and Lifestyle"
       >
-        {/* Visual lifestyle 1 */}
-        <div className="rounded-3xl min-[1200px]:rounded-[32px] overflow-hidden relative aspect-[4/3] sm:aspect-[16/10] min-[1200px]:aspect-[16/9] min-h-[380px] sm:min-h-[500px] min-[1200px]:min-h-[620px] mb-8 sm:mb-12 shadow-xs border border-neutral-200/60 bg-[#F9F9F9]">
+        {/* Visual lifestyle 1 (Mobile: w 358px × h 477.33px, radius 16px) */}
+        <div className="w-full max-w-[358px] h-[477.33px] min-h-[477.33px] md:max-w-none md:h-auto mx-auto rounded-[16px] md:rounded-3xl xl:rounded-[32px] overflow-hidden relative md:aspect-[16/10] xl:aspect-[16/9] md:min-h-[420px] xl:min-h-[620px] mb-6 md:mb-12 shadow-xs border border-neutral-200/60 bg-[#F9F9F9]">
           <Image
             src={lifestyleTop}
             alt={`${product.name} lifestyle showcase`}
             fill
-            sizes="(max-width: 1200px) 100vw, 1280px"
+            sizes="(max-width: 768px) 358px, (max-width: 1200px) 746px, 1106px"
             className="object-cover object-center"
           />
         </div>
@@ -106,13 +106,13 @@ export default async function ProductDetailPage({ params }: PageProps) {
         {/* Feature Bento Grid */}
         <ProductBento features={product.features} />
 
-        {/* Visual lifestyle 2 */}
-        <div className="rounded-3xl min-[1200px]:rounded-[32px] overflow-hidden relative aspect-[4/3] sm:aspect-[16/10] min-[1200px]:aspect-[16/9] min-h-[380px] sm:min-h-[500px] min-[1200px]:min-h-[620px] mt-8 sm:mt-12 shadow-xs border border-neutral-200/60 bg-[#F9F9F9]">
+        {/* Visual lifestyle 2 (Mobile: w 358px × h 477.33px, radius 16px) */}
+        <div className="w-full max-w-[358px] h-[477.33px] min-h-[477.33px] md:max-w-none md:h-auto mx-auto rounded-[16px] md:rounded-3xl xl:rounded-[32px] overflow-hidden relative md:aspect-[16/10] xl:aspect-[16/9] md:min-h-[420px] xl:min-h-[620px] mt-6 md:mt-12 shadow-xs border border-neutral-200/60 bg-[#F9F9F9]">
           <Image
             src={lifestyleBottom}
             alt={`${product.name} ambient detail`}
             fill
-            sizes="(max-width: 1200px) 100vw, 1280px"
+            sizes="(max-width: 768px) 358px, (max-width: 1200px) 746px, 1106px"
             className="object-cover object-center"
           />
         </div>
@@ -120,7 +120,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
       {/* 3. Accordion & Downloads Section */}
       <section
-        className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 py-8 sm:py-12"
+        className="w-full max-w-[746px] xl:max-w-[1106px] mx-auto px-4 md:px-0 xl:px-0 pt-8 sm:pt-12 pb-[80px] xl:py-12"
         aria-label="Product Specifications and Manuals"
       >
         <ProductAccordion
@@ -132,10 +132,10 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
       {/* 4. Cross-sell Best Sellers Carousel */}
       <section
-        className="w-full pt-8 sm:pt-12 pb-8 sm:pb-12 overflow-hidden"
+        className="w-full pt-0 xl:pt-12 pb-[80px] xl:pb-12 overflow-hidden"
         aria-label="Related Best Sellers"
       >
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 mb-6 sm:mb-8">
+        <div className="w-full max-w-[746px] xl:max-w-[1106px] mx-auto px-4 md:px-0 xl:px-0 mb-6 sm:mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-dark">
             Best sellers
           </h2>

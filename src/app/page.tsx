@@ -67,19 +67,19 @@ export default async function Home() {
       {/* 2. Best Sellers Section con Air Fryer 5.7 L al 1° posto e Indoor Camera al 2° */}
       <BestSellers products={bestSellersList} />
 
-      {/* 3. Kitchen Bento Grid Section (distacco superiore 60px su desktop, 44px tablet, 32px mobile) */}
+      {/* 3. Kitchen Bento Grid Section (distacco superiore 60px su desktop, padding superiore 80px su tablet/mobile) */}
       <section
         id="kitchen"
-        className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 mt-[32px] min-[810px]:mt-[44px] min-[1200px]:mt-[60px] mb-[60px] min-[810px]:mb-[90px] min-[1200px]:mb-[120px]"
+        className="w-full max-w-[746px] xl:max-w-[1106px] mx-auto px-4 md:px-0 xl:px-0 pt-[80px] xl:pt-0 xl:mt-[60px] mb-[60px] md:mb-[90px] xl:mb-[120px]"
       >
         <SectionHeader
           title="Kitchen"
           subtitle="Powerful appliances for everyday cooking"
           ctaText="Explore all products"
-          ctaHref="/#kitchen"
+          ctaHref="/products/countertop-blender"
         />
 
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4 sm:gap-6">
           {/* Top Featured Card: Kettle 1.7 L con lifestyle reale versato */}
           {kettle && (
             <ProductCard
@@ -91,7 +91,7 @@ export default async function Home() {
           )}
 
           {/* Bottom 2 Vertical Cards: Portable Blender & Countertop Blender */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-4 md:gap-4 xl:gap-6">
             {portableBlender && (
               <ProductCard
                 product={portableBlender}
@@ -111,26 +111,27 @@ export default async function Home() {
       {/* 4. Hair Care Interstitial Banner (distacco inferiore 180px su desktop prima di Home Security) */}
       <div
         id="hair-care"
-        className="w-full mb-[80px] min-[810px]:mb-[120px] min-[1200px]:mb-[180px]"
+        className="w-full mb-[80px] md:mb-[120px] xl:mb-[180px]"
       >
         <HairCareBanner product={hairDryer} />
       </div>
 
-      {/* 5. Home Security Asymmetric Bento Grid Section (respiro 180px sopra da Hair Care) */}
+      {/* 5. Home Security Section (respiro 180px sopra da Hair Care) */}
       <section
         id="home-security"
-        className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12"
+        className="w-full max-w-[746px] xl:max-w-[1106px] mx-auto px-4 md:px-0 xl:px-0"
       >
         <SectionHeader
           title="Home Security"
           subtitle="Home feels safer when you're always in the loop"
           ctaText="Explore all products"
-          ctaHref="/#home-security"
+          ctaHref="/products/indoor-camera"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+        {/* Desktop Bento Grid (>= 1200px): Asymmetric 50/50 Split */}
+        <div className="hidden xl:grid xl:grid-cols-2 gap-6 items-stretch">
           {/* Left Column: Indoor Camera su mensola in legno */}
-          <div className="w-full h-full">
+          <div className="w-full h-full xl:w-[540px] xl:h-[720px]">
             {indoorCam && (
               <ProductCard
                 product={indoorCam}
@@ -142,7 +143,7 @@ export default async function Home() {
           </div>
 
           {/* Right Column: Outdoor Camera & Video Doorbell (titoli naturali su due righe) */}
-          <div className="w-full flex flex-col gap-6 justify-between h-full">
+          <div className="w-full flex flex-col gap-6 justify-between h-full xl:w-[540px] xl:h-[720px]">
             {outdoorCam && (
               <ProductCard
                 product={outdoorCam}
@@ -159,21 +160,49 @@ export default async function Home() {
             )}
           </div>
         </div>
+
+        {/* Tablet & Mobile Layout (< 1200px, da Mockup Figma): Card Large sopra + 2 Card verticali affiancate sotto */}
+        <div className="flex xl:hidden flex-col gap-4 sm:gap-6">
+          {/* Top Card Large: Indoor Camera su mensola in legno (746x420 su tablet) */}
+          {indoorCam && (
+            <ProductCard
+              product={indoorCam}
+              variant="large"
+              lifestyleImage="/images/products/indoor-cam-shelf.png"
+            />
+          )}
+
+          {/* Bottom 2 Vertical Cards: Outdoor Camera & Video Doorbell */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4">
+            {outdoorCam && (
+              <ProductCard
+                product={outdoorCam}
+                variant="medium-vertical"
+              />
+            )}
+            {doorbell && (
+              <ProductCard
+                product={doorbell}
+                variant="medium-vertical"
+              />
+            )}
+          </div>
+        </div>
       </section>
 
       {/* 6. Accessories 3-Column Section (spaziatura 120px sopra e 120px sotto verso Explore all categories) */}
       <section
         id="accessories"
-        className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 mt-[64px] min-[810px]:mt-[90px] min-[1200px]:mt-[120px] mb-[64px] min-[810px]:mb-[90px] min-[1200px]:mb-[120px]"
+        className="w-full max-w-[746px] xl:max-w-[1106px] mx-auto px-4 md:px-0 xl:px-0 mt-[64px] md:mt-[90px] xl:mt-[120px] mb-[64px] md:mb-[90px] xl:mb-[120px]"
       >
         <SectionHeader
           title="Accessories"
           subtitle="The little things that make everything work better"
           ctaText="Explore all products"
-          ctaHref="/#accessories"
+          ctaHref="/products/power-bank-10000"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-4 md:gap-4 xl:gap-6">
           {powerBank && (
             <ProductCard
               product={powerBank}
@@ -199,7 +228,7 @@ export default async function Home() {
       <ExploreCategories categories={categories} />
 
       {/* 8. Store Locator Banner (distacco superiore 180px su desktop rispetto alla griglia categorie) */}
-      <StoreBanner className="mt-[80px] min-[810px]:mt-[120px] min-[1200px]:mt-[180px]" />
+      <StoreBanner className="mt-[80px] md:mt-[120px] xl:mt-[180px]" />
     </div>
   );
 }

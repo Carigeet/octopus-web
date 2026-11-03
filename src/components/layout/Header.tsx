@@ -23,10 +23,10 @@ export function Header() {
   const closeBtnRef = useRef<HTMLButtonElement | null>(null);
   const drawerRef = useRef<HTMLDivElement | null>(null);
 
-  // Close drawer on window resize above 810px
+  // Close drawer on window resize above 768px (tablet & desktop)
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 810) {
+      if (window.innerWidth >= 768) {
         setIsMobileMenuOpen(false);
       }
     };
@@ -82,22 +82,22 @@ export function Header() {
 
   return (
     <>
-      <header className="fixed top-5 inset-x-0 z-50 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 pointer-events-none">
+      <header className="fixed top-5 inset-x-0 z-50 w-full max-w-[746px] xl:max-w-[1106px] mx-auto px-4 md:px-0 xl:px-0 pointer-events-none">
         <div className="w-full pointer-events-auto flex items-center justify-between min-h-[56px] px-6 py-2.5 bg-white/80 backdrop-blur-md rounded-full shadow-lg border border-black/5 transition-all">
-          {/* Brand Logo: Compact mark on mobile (< 810px), full logo on tablet/desktop */}
-          <div className="flex items-center my-auto leading-none">
-            <div className="flex items-center my-auto min-[810px]:hidden">
+          {/* Brand Logo: Compact mark on mobile (< 768px), full logo on tablet/desktop */}
+          <div className="flex items-center my-auto leading-none xl:flex xl:items-center">
+            <div className="flex items-center my-auto md:hidden">
               <OctopusLogo variant="mark" className="my-auto" />
             </div>
-            <div className="hidden min-[810px]:flex items-center my-auto">
+            <div className="hidden md:flex xl:flex items-center my-auto">
               <OctopusLogo variant="full" className="my-auto" />
             </div>
           </div>
 
-          {/* Desktop / Tablet Navigation Links & CTA Group (>= 810px) */}
-          <div className="hidden min-[810px]:flex items-center my-auto gap-6 lg:gap-8">
+          {/* Desktop / Tablet Navigation Links & CTA Group (>= 768px) */}
+          <div className="hidden md:flex xl:flex items-center my-auto gap-6 lg:gap-8 xl:gap-8">
             <nav
-              className="flex items-center my-auto gap-6 lg:gap-8"
+              className="flex items-center my-auto gap-6 lg:gap-8 xl:gap-8"
               aria-label="Main Navigation"
             >
               {NAV_ITEMS.map((item) => (
@@ -121,8 +121,8 @@ export function Header() {
             </Button>
           </div>
 
-          {/* Mobile Hamburger Trigger (< 810px) */}
-          <div className="flex min-[810px]:hidden items-center my-auto">
+          {/* Mobile Hamburger Trigger (< 768px) */}
+          <div className="flex md:hidden items-center my-auto">
             <button
               ref={triggerRef}
               type="button"
@@ -150,10 +150,10 @@ export function Header() {
         </div>
       </header>
 
-      {/* Mobile Drawer Modal (< 810px) */}
+      {/* Mobile Drawer Modal (< 768px) */}
       {isMobileMenuOpen && (
         <div
-          className="fixed inset-0 z-50 min-[810px]:hidden flex items-start justify-center pt-6 px-4"
+          className="fixed inset-0 z-50 md:hidden flex items-start justify-center pt-6 px-4"
           role="dialog"
           aria-modal="true"
           aria-label="Mobile Navigation"

@@ -35,20 +35,20 @@ export function ProductBento({ features = [], className = "" }: ProductBentoProp
   return (
     <div className={`w-full flex flex-col gap-6 ${className}`.trim()}>
       {/* ============================================================== */}
-      {/* DESKTOP BENTO LAYOUT (>= 1200px) */}
+      {/* TABLET & DESKTOP BENTO LAYOUT (>= 768px) */}
       {/* ============================================================== */}
-      <div className="hidden min-[1200px]:flex flex-col gap-6">
+      <div className="hidden md:flex flex-col gap-4 xl:gap-6">
         {/* Row 1: Full-width Wide Split Card */}
-        <article className="group bg-[#F9F9F9] rounded-[32px] overflow-hidden flex flex-row items-stretch justify-between border border-neutral-200/60 shadow-xs transition-all duration-300 hover:shadow-md min-h-[290px]">
-          <div className="flex-1 p-10 min-[1200px]:p-12 flex flex-col justify-center max-w-lg z-10">
-            <h3 className="text-2xl min-[1200px]:text-3xl font-bold text-gray-950 tracking-tight mb-3">
+        <article className="group bg-[#F9F9F9] rounded-[32px] overflow-hidden flex flex-row items-stretch justify-between border border-neutral-200/60 shadow-xs transition-all duration-300 hover:shadow-md min-h-[240px] xl:min-h-[290px]">
+          <div className="flex-1 p-8 xl:p-12 flex flex-col justify-center max-w-lg z-10">
+            <h3 className="text-xl xl:text-3xl font-bold text-gray-950 tracking-tight mb-3">
               {f1.title}
             </h3>
-            <p className="text-sm min-[1200px]:text-base text-gray-600 leading-relaxed">
+            <p className="text-sm xl:text-base text-gray-600 leading-relaxed">
               {f1.description}
             </p>
           </div>
-          <div className="relative w-1/2 min-h-[290px]">
+          <div className="relative w-1/2 min-h-[240px] xl:min-h-[290px]">
             <Image
               src={f1.image || "/images/products/placeholder-800x800.png"}
               alt={f1.title}
@@ -60,18 +60,18 @@ export function ProductBento({ features = [], className = "" }: ProductBentoProp
         </article>
 
         {/* Row 2: 2 Side-by-Side Cards */}
-        <div className="grid grid-cols-2 gap-6 items-stretch">
+        <div className="grid grid-cols-2 gap-4 xl:gap-6 items-stretch">
           {/* Card 2 Left */}
-          <article className="group bg-[#F9F9F9] rounded-[32px] overflow-hidden flex flex-col justify-between border border-neutral-200/60 shadow-xs transition-all duration-300 hover:shadow-md min-h-[460px]">
-            <div className="p-8 min-[1200px]:p-10 z-10">
-              <h3 className="text-xl min-[1200px]:text-2xl font-bold text-gray-950 tracking-tight mb-3">
+          <article className="group bg-[#F9F9F9] rounded-[32px] overflow-hidden flex flex-col justify-between border border-neutral-200/60 shadow-xs transition-all duration-300 hover:shadow-md min-h-[380px] xl:min-h-[460px]">
+            <div className="p-6 xl:p-10 z-10">
+              <h3 className="text-lg xl:text-2xl font-bold text-gray-950 tracking-tight mb-2 xl:mb-3">
                 {f2.title}
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="text-xs xl:text-sm text-gray-600 leading-relaxed">
                 {f2.description}
               </p>
             </div>
-            <div className="relative w-full h-[280px]">
+            <div className="relative w-full h-[220px] xl:h-[280px]">
               <Image
                 src={f2.image || "/images/products/placeholder-800x800.png"}
                 alt={f2.title}
@@ -83,16 +83,16 @@ export function ProductBento({ features = [], className = "" }: ProductBentoProp
           </article>
 
           {/* Card 3 Right */}
-          <article className="group bg-[#EFE9E0] rounded-[32px] overflow-hidden flex flex-col justify-between border border-neutral-200/60 shadow-xs transition-all duration-300 hover:shadow-md min-h-[460px]">
-            <div className="p-8 min-[1200px]:p-10 z-10">
-              <h3 className="text-xl min-[1200px]:text-2xl font-bold text-gray-950 tracking-tight mb-3">
+          <article className="group bg-[#EFE9E0] rounded-[32px] overflow-hidden flex flex-col justify-between border border-neutral-200/60 shadow-xs transition-all duration-300 hover:shadow-md min-h-[380px] xl:min-h-[460px]">
+            <div className="p-6 xl:p-10 z-10">
+              <h3 className="text-lg xl:text-2xl font-bold text-gray-950 tracking-tight mb-2 xl:mb-3">
                 {f3.title}
               </h3>
-              <p className="text-sm text-gray-700 leading-relaxed">
+              <p className="text-xs xl:text-sm text-gray-700 leading-relaxed">
                 {f3.description}
               </p>
             </div>
-            <div className="relative w-full h-[280px]">
+            <div className="relative w-full h-[220px] xl:h-[280px]">
               <Image
                 src={f3.image || "/images/products/placeholder-800x800.png"}
                 alt={f3.title}
@@ -105,16 +105,16 @@ export function ProductBento({ features = [], className = "" }: ProductBentoProp
         </div>
 
         {/* Row 3: Full-width Wide Split Card */}
-        <article className="group bg-[#F9F9F9] rounded-[32px] overflow-hidden flex flex-row items-stretch justify-between border border-neutral-200/60 shadow-xs transition-all duration-300 hover:shadow-md min-h-[290px]">
-          <div className="flex-1 p-10 min-[1200px]:p-12 flex flex-col justify-center max-w-lg z-10">
-            <h3 className="text-2xl min-[1200px]:text-3xl font-bold text-gray-950 tracking-tight mb-3">
+        <article className="group bg-[#F9F9F9] rounded-[32px] overflow-hidden flex flex-row items-stretch justify-between border border-neutral-200/60 shadow-xs transition-all duration-300 hover:shadow-md min-h-[240px] xl:min-h-[290px]">
+          <div className="flex-1 p-8 xl:p-12 flex flex-col justify-center max-w-lg z-10">
+            <h3 className="text-xl xl:text-3xl font-bold text-gray-950 tracking-tight mb-3">
               {f4.title}
             </h3>
-            <p className="text-sm min-[1200px]:text-base text-gray-600 leading-relaxed">
+            <p className="text-sm xl:text-base text-gray-600 leading-relaxed">
               {f4.description}
             </p>
           </div>
-          <div className="relative w-1/2 min-h-[290px]">
+          <div className="relative w-1/2 min-h-[240px] xl:min-h-[290px]">
             <Image
               src={f4.image || "/images/products/placeholder-800x800.png"}
               alt={f4.title}
@@ -127,30 +127,30 @@ export function ProductBento({ features = [], className = "" }: ProductBentoProp
       </div>
 
       {/* ============================================================== */}
-      {/* TABLET & MOBILE STACKED LAYOUT (< 1200px) */}
+      {/* MOBILE STACKED LAYOUT (< 768px) */}
       {/* ============================================================== */}
-      <div className="flex min-[1200px]:hidden flex-col gap-6">
+      <div className="flex md:hidden flex-col items-center gap-6">
         {[f1, f2, f3, f4].map((feature, idx) => (
           <article
             key={feature.title}
-            className={`group rounded-3xl overflow-hidden flex flex-col justify-between border border-neutral-200/60 shadow-xs transition-all duration-300 ${
+            className={`group w-full max-w-[358px] h-[477.33px] min-h-[477.33px] rounded-[16px] overflow-hidden flex flex-col justify-between border border-neutral-200/60 shadow-xs transition-all duration-300 ${
               idx === 2 ? "bg-[#EFE9E0]" : "bg-[#F9F9F9]"
             }`}
           >
-            <div className="p-6 sm:p-8 z-10">
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-950 tracking-tight mb-2">
+            <div className="pt-[40px] px-[24px] flex flex-col items-center text-center gap-2 z-10">
+              <h3 className="text-xl font-bold text-gray-950 tracking-tight">
                 {feature.title}
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed">
                 {feature.description}
               </p>
             </div>
-            <div className="relative w-full h-[220px] sm:h-[300px]">
+            <div className="relative w-full flex-1 min-h-[240px]">
               <Image
                 src={feature.image || "/images/products/placeholder-800x800.png"}
                 alt={feature.title}
                 fill
-                sizes="(max-width: 810px) 100vw, 700px"
+                sizes="358px"
                 className={`transition-transform duration-500 ease-out group-hover:scale-105 ${
                   idx === 1
                     ? "object-contain object-bottom p-4"

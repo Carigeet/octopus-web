@@ -12,10 +12,10 @@ export function BestSellers({ products, className = "" }: BestSellersProps) {
 
   return (
     <section
-      className={`w-full pt-12 sm:pt-16 min-[1200px]:pt-20 pb-0 overflow-hidden ${className}`.trim()}
+      className={`w-full pt-12 sm:pt-16 xl:pt-20 pb-[80px] xl:pb-0 overflow-hidden ${className}`.trim()}
       aria-label="Best Sellers Carousel"
     >
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 mb-6 sm:mb-8">
+      <div className="w-full max-w-[746px] xl:max-w-[1106px] mx-auto px-4 md:px-0 xl:px-0 mb-6 sm:mb-8">
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#000000]">
           Best sellers
         </h2>

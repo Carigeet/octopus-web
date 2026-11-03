@@ -56,7 +56,7 @@ export const Button = React.forwardRef<
   ref
 ) {
   const baseClasses =
-    "inline-flex items-center justify-center rounded-full transition-colors duration-200 ease-out font-medium select-none cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none";
+    "inline-flex items-center justify-center rounded-full transition-colors duration-200 ease-out font-medium select-none cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none touch-manipulation";
 
   const combinedClasses = `${baseClasses} ${variantStyles[variant]} ${sizeStyles[size]} ${
     fullWidth ? "w-full" : ""

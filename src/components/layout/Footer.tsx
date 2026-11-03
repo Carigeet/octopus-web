@@ -5,11 +5,11 @@ import { OctopusLogo } from "@/components/common/OctopusLogo";
 export function Footer() {
   return (
     <footer className="w-full bg-[#D01A1F] text-white" aria-label="Global Footer">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 py-12 md:py-16">
+      <div className="w-full max-w-[746px] xl:max-w-[1106px] mx-auto px-4 md:px-0 xl:px-0 py-12 md:py-16">
         {/* Main Grid Content */}
-        <div className="grid grid-cols-1 min-[810px]:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-white/20">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-white/20">
           {/* Brand Column (Left) */}
-          <div className="min-[810px]:col-span-4 lg:col-span-5 flex flex-col items-start">
+          <div className="md:col-span-4 lg:col-span-5 flex flex-col items-start">
             <OctopusLogo
               variant="stacked"
               color="white"
@@ -19,7 +19,7 @@ export function Footer() {
           </div>
 
           {/* Navigation Columns (Right) */}
-          <div className="min-[810px]:col-span-8 lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="md:col-span-8 lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Our Products Column (occupies 2 sub-columns on desktop/tablet) */}
             <div className="lg:col-span-2">
               <h2 className="text-white font-semibold text-base mb-4 tracking-tight">
