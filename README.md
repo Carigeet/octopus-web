@@ -1,6 +1,6 @@
 # Octopus Web
 
-Technical Assessment Demo for **ZURU – Product Engineer (Web)**: homepage and Product Detail Page (PDP) for the *Octopus* brand, built with **Next.js 16 (App Router)**, **React 19**, **TypeScript**, and **Tailwind CSS 4**, with automated test suites and Lighthouse audits scoring **≥ 92 in every category** (Performance, Best Practices and CLS at or near perfect).
+Homepage and Product Detail Page (PDP) demo for the *Octopus* consumer electronics brand, built with **Next.js 16 (App Router)**, **React 19**, **TypeScript**, and **Tailwind CSS 4**, with automated test suites and Lighthouse audits scoring **≥ 92 in every category** (Performance, Best Practices and CLS at or near perfect).
 
 | | |
 |---|---|
