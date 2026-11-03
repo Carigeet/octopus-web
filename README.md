@@ -1,169 +1,183 @@
 # Octopus Web
 
-Demo del Technical Test **ZURU – Product Engineer (Web)**: homepage e Product Detail Page (PDP) del brand *Octopus*, costruite con **Next.js 16 (App Router)**, **React 19**, **TypeScript** e **Tailwind CSS 4**, con test automatizzati e audit Lighthouse ≥ 96 su tutte le categorie.
+Technical Assessment Demo for **ZURU – Product Engineer (Web)**: homepage and Product Detail Page (PDP) for the *Octopus* brand, built with **Next.js 16 (App Router)**, **React 19**, **TypeScript**, and **Tailwind CSS 4**, with automated test suites and Lighthouse audits scoring **≥ 92 in every category** (Performance, Best Practices and CLS at or near perfect).
 
 | | |
 |---|---|
 | **Live Demo (Vercel)** | <https://octopus-web-steel.vercel.app> |
-| **Repo GitHub** | <https://github.com/Carigeet/octopus-web> |
+| **GitHub Repository** | <https://github.com/Carigeet/octopus-web> |
 
-- **Homepage**: hero, carosello Best sellers, sezioni Kitchen / Hair care / Home security / Accessories, categorie, store locator.
-- **PDP** (`/products/[slug]`): buy box con selettore colore, bento delle feature, accordion delle specifiche, download del manuale, carosello cross-sell.
-- Breakpoint: **Desktop ≥ 1200px**, **Tablet 768–1199px**, **Mobile < 768px**.
+- **Homepage**: Hero, Best sellers carousel, Kitchen / Hair care / Home security / Accessories sections, category grid, and store locator banner.
+- **PDP** (`/products/[slug]`): buy box with colour swatch selector, feature bento grid, technical specifications accordion, manual PDF download, and cross-sell carousel.
+- Responsive viewports: **Desktop ≥ 1200px**, **Tablet 768–1199px**, **Mobile < 768px**.
 
 ---
 
-## 1. Overview & setup rapido
+## 1. Overview & Quick Setup
 
-**Requisiti:** Node.js **≥ 20.9** (requisito di Next 16) e npm.
+**Prerequisites:** Node.js **≥ 20.9** (Next.js 16 requirement) and npm.
 
 ```bash
 npm install
-npm run build      # build di produzione
-npm run start      # serve su http://localhost:3000
+npm run build      # production build
+npm run start      # serve locally on http://localhost:3000
 ```
 
-Sviluppo: `npm run dev` (`http://localhost:3000`).
+Development server: `npm run dev` (`http://localhost:3000`).
 
-### Test
+### Testing
 
-| Comando | Cosa fa |
+| Command | Description |
 |---|---|
-| `npm test` | **19 component test** con Vitest + React Testing Library (jsdom), ~2 s. Nessun browser né build richiesti. |
-| `npm run test:e2e` | **Playwright** su *Desktop Chrome* e *Mobile Pixel 7*. Costruisce e avvia da solo la build di produzione (porta 3100). |
-| `npm run test:all` | Component test + E2E in sequenza. |
-| `npm run typecheck` · `npm run lint` | `tsc --noEmit` ed ESLint. |
+| `npm test` | **19 component tests** via Vitest + React Testing Library (jsdom), ~2 s. No browser or build required. |
+| `npm run test:e2e` | **Playwright** end-to-end tests on *Desktop Chrome* and *Mobile Pixel 7*. Builds and serves the production app on port 3100 automatically. |
+| `npm run test:all` | Runs the component and E2E suites sequentially. |
+| `npm run typecheck` · `npm run lint` | Runs `tsc --noEmit` and ESLint. |
 
-> **Prima esecuzione E2E:** serve il browser di Playwright: `npx playwright install chromium`.
-> `test:e2e` riusa un server già attivo sulla porta 3100, se presente (in CI ne avvia sempre uno nuovo).
+> **First E2E run:** install the Playwright browser with `npx playwright install chromium`.
+> `test:e2e` reuses a server already listening on port 3100 if there is one (CI always starts a fresh instance).
 
-**Cosa coprono:**
-- `ProductAccordion` (8 test): chiuso di default, apertura/chiusura al click, sezioni multiple, `aria-expanded` / `aria-controls` / `role="region"`, tasti **Enter** e **Space**, Tab.
-- `Carousel` (9 test): scorrimento di una slide, frecce disabilitate a inizio e fine corsa, tastiera (←/→), sincronizzazione dopo swipe touch.
-- `Header` (2 test): il drawer mobile si apre con `aria-expanded`, si chiude con **Escape** riportando il focus sul trigger.
-- **E2E** (`e2e/countertop-blender.spec.ts`): Home → "Learn more" sulla card del Countertop Blender → render della PDP → selettore colore → espansione di "Technical specifications".
+**Coverage:**
+- `ProductAccordion` (8 tests): closed by default, click expand/collapse, multiple open sections, `aria-expanded` / `aria-controls` / `role="region"` wiring, **Enter** and **Space** keys, tab order.
+- `Carousel` (9 tests): single-slide scroll, arrow buttons disabled at both track boundaries, keyboard navigation (←/→), state sync after touch swipes.
+- `Header` (2 tests): mobile drawer opens with `aria-expanded`, closes on **Escape** and returns focus to the trigger.
+- **E2E** (`e2e/countertop-blender.spec.ts`): Homepage → "Learn more" on the Countertop Blender card → PDP render → colour swatch → "Technical specifications" accordion.
 
 ---
 
-## 2. Lighthouse
+## 2. Lighthouse Audit Results
 
-Audit **Lighthouse 13.5.0** sulla **build di produzione locale** (`npm run build && npm run start`, `http://localhost:3000`), eseguito il 3 novembre 2026. I report completi (PDF, in italiano) sono in [`reports/`](./reports).
+**Lighthouse 13.5.0** audit run on a local production build (`npm run build && npm run start`, `http://localhost:3000`) on November 3, 2026. The full PDF reports (in Italian) are in [`reports/`](./reports).
 
-| Pagina | Performance | Accessibility | Best Practices | SEO | CLS |
+| Target page | Performance | Accessibility | Best Practices | SEO | CLS |
 |---|:---:|:---:|:---:|:---:|:---:|
 | Homepage – Desktop | **100** | 96 | **100** | 92 | **0** |
 | Homepage – Mobile | **96** | 96 | **100** | 92 | **0** |
 | PDP (Countertop Blender) – Desktop | **100** | 96 | **100** | **100** | **0** |
 | PDP (Countertop Blender) – Mobile | **96** | 96 | **100** | **100** | **0** |
 
-Target del brief (Performance Mobile ≥ 90, Accessibility ≥ 90) rispettati. Gli audit sono su build locale, **non** sul deploy Vercel.
+The brief's targets (Mobile Performance ≥ 90, Accessibility ≥ 90) are met. The audits ran on the local production build, **not** on the Vercel deployment.
 
-### Perché Accessibility è 96 e non 100
+### Why Accessibility is 96, not 100
 
-L'**unico audit fallito è il contrasto colori**. Gli elementi segnalati sono i **token colore del brand presi dal design spec Figma**:
-- i link del footer (`text-white/85` su `#D01A1F`);
-- il tag categoria `#E51A24` sulle card Best sellers (solo Homepage).
+The only failing audit is **colour contrast**. The flagged elements come from the **brand colour tokens in the Figma design spec**:
+- footer link labels (`text-white/85` on a `#D01A1F` background);
+- the `#E51A24` category tag on Best seller cards (Homepage only).
 
-Li ho **mantenuti invariati per fedeltà al design**: cambiarli è una decisione di design, non un bug tecnico. Il fix è semplice se il design lo concede: testo bianco pieno nel footer e un rosso leggermente più scuro per il tag.
+I kept these tokens unchanged for design fidelity: changing them is a product design decision, not an engineering defect. The fix is straightforward if design approves it: solid white text in the footer and a slightly darker red for the category tag.
 
-### Perché la SEO della Homepage è 92
+### Why Homepage SEO is 92
 
-Per i **19 link "Learn more"** delle card Lighthouse segnala "I link non contengono testo descrittivo". Quasi tutti hanno un `aria-label` descrittivo (es. *"Learn more about Octopus Kettle 1.7 L"*), ma l'audit valuta il testo visibile. La PDP non ha questi link e ottiene 100. Vedi *Sviluppi futuri*.
+Lighthouse flags the **19 "Learn more" card links** under "Links do not have descriptive text". Most of them have a descriptive `aria-label` (e.g. *"Learn more about Octopus Kettle 1.7 L"*), but the audit evaluates the visible link text. The PDP has no repeated calls to action and scores 100. See the Future Roadmap.
+
 
 ---
 
-## 3. Scelte architetturali
+## 3. Architectural & Engineering Decisions
 
-### Architettura data-driven
-- Catalogo, feature, colori, specifiche e categorie vivono in `src/data/products.json` e `src/data/categories.json`, tipizzati da `src/types/product.ts`; l'accesso passa da `src/lib/products.ts`.
-- Aggiungere un prodotto significa aggiungere un oggetto al JSON: card, PDP, accordion, metadati e route statica si generano da soli.
-- Restano nei componenti i **testi editoriali di sezione** (hero, titoli e sottotitoli di sezione, store banner, footer): non fanno parte del catalogo.
+### Data-driven architecture
+- Catalogue data, features, colours, technical specifications and categories live in `src/data/products.json` and `src/data/categories.json`, typed by the interfaces in `src/types/product.ts`. Access goes through `src/lib/products.ts`.
+- Adding a product means adding one schema-valid JSON object: product cards, the PDP, accordion panels, metadata and the static route are all generated from it.
+- Editorial section copy (hero, section headers, store banner, footer) stays in the presentation components, as it is not part of the product catalogue.
 
-### Routing dinamico, SSG e metadati
-- `src/app/products/[slug]/page.tsx` usa **`generateStaticParams`** (11 prodotti pre-renderizzati) e **`generateMetadata`**: title, description, canonical, **OpenGraph** e **Twitter card** per prodotto, `noindex` se lo slug non esiste.
-- `src/app/layout.tsx` è l'**unica fonte** dei metadati della Home: `metadataBase`, `title.template` (`%s | Octopus`), OG e Twitter con immagine 1600×900.
-- Next 16 con `cacheComponents` e `partialPrefetching` abilitati.
+### Dynamic routing, SSG and metadata
+- `src/app/products/[slug]/page.tsx` uses **`generateStaticParams`** (11 product pages pre-rendered at build time) and **`generateMetadata`**: per-product title, description, canonical, **OpenGraph** and **Twitter card**, with `noindex` for unknown slugs.
+- `src/app/layout.tsx` is the **single source of truth** for root metadata: `metadataBase`, `title.template` (`%s | Octopus`), and the default OpenGraph/Twitter image (1600×900).
+- Next.js 16 with the `cacheComponents` and `partialPrefetching` flags enabled.
 
-### Allineamento layout Desktop
-- Un solo asse per il contenuto: **`xl:max-w-[1106px] xl:mx-auto`** su navbar, Best sellers, Kitchen, Hair care, Home security, Accessories, Explore categories, store banner e footer. Gli sfondi (hero, Hair care, store) restano a tutta larghezza; il contenuto interno è sull'asse.
-- Verificato misurando le bounding box a 1200 / 1440 / 1920 px: bordo sinistro e destro coincidono (a 1440 px: x = 167 → 1273 per tutte le sezioni).
-- I padding interni (es. gli `80px` a sinistra del testo) stanno **dentro le card**, mai sui container di pagina.
+### Desktop layout alignment
+- One shared content axis: **`xl:max-w-[1106px] xl:mx-auto`** on the header, Best sellers, Kitchen, Hair care, Home security, Accessories, Explore categories, store banner and footer. Background layers (hero, banners) stay full-bleed while their inner content sits on the axis.
+- Verified by measuring element bounding boxes at 1200 / 1440 / 1920 px: left and right edges match (at 1440 px: x = 167 → 1273 for every section).
+- Inner offsets (such as the 80px left padding of card copy) live **inside the cards**, never on page-level containers.
 
-### Core Web Vitals e caricamento immagini
-- **CLS = 0**: ogni `next/image` con `fill` sta in un wrapper con dimensioni o aspect ratio bloccati e ha `sizes` coerenti con i breakpoint.
-- **`preload`** (API di Next 16, che depreca `priority`) **solo** sull'hero e sulla buy box della PDP. Nell'HTML di produzione ogni pagina ha esattamente un'immagine con preload, e tutte le altre sono `loading="lazy"` nativo.
-- Le icone sono **SVG inline**: nessuna libreria di icone nel bundle.
+### Core Web Vitals and image loading
+- **CLS = 0**: every `next/image` using `fill` sits in a parent with fixed dimensions or aspect ratio, and has `sizes` matched to the breakpoints.
+- **`preload`** (the Next.js 16 API that supersedes `priority`) is used **only** on the Homepage hero and the PDP buy box image. The production HTML has exactly one preloaded image per page; every other image is native `loading="lazy"`.
+- **No icon library at runtime**: icons are inline SVGs.
 
-### Accessibilità (WCAG AA)
-- Gerarchia heading **`h1` → `h2` → `h3`** senza salti; sulla PDP due `h2` **`.sr-only`** introducono le sezioni senza titolo visibile.
-- Carosello: `role="region"`, track con **`role="group"`** focusabile e navigabile con ←/→; frecce con `aria-label` e `disabled` a inizio e fine corsa.
-- Accordion: `aria-expanded`, `aria-controls`, pannello `role="region"` con `aria-labelledby`; **Enter** e **Space** tramite pulsanti nativi.
-- Drawer mobile: `role="dialog"`, `aria-modal`, focus trap, chiusura con **Escape** e focus riportato al trigger, `aria-expanded` sul pulsante.
-- Focus ring visibili ovunque (`focus-visible:ring-2`) e rispetto di `prefers-reduced-motion`.
+### Accessibility (WCAG AA)
+- Strict heading hierarchy **`h1` → `h2` → `h3`** with no skipped levels; on the PDP two **`.sr-only` `h2`** headings keep the outline intact for sections without a visible title.
+- Carousel: `role="region"`, with the slide track as a focusable **`role="group"`** that responds to ←/→; arrow buttons have `aria-label`s and are `disabled` at the boundaries.
+- Accordion: `aria-expanded`, `aria-controls`, and `role="region"` panels linked via `aria-labelledby`; **Enter** and **Space** through native buttons.
+- Mobile drawer: `role="dialog"`, `aria-modal`, focus trap, **Escape** to close with focus returned to the trigger, and `aria-expanded` on the trigger.
+- Visible focus rings everywhere (`focus-visible:ring-2`) and `prefers-reduced-motion` support.
 
-### Struttura
+### Directory structure
 ```
 src/
-  app/                 layout, home, products/[slug] (SSG + metadata)
+  app/                 root layout, home, products/[slug] (SSG + metadata)
   components/
-    common/ home/ layout/ pdp/ shared/   (test accanto al componente: *.test.tsx)
+    common/ home/ layout/ pdp/ shared/   (co-located tests: *.test.tsx)
   data/                products.json, categories.json
-  lib/                 accesso ai dati
-  types/               contratti TypeScript
-e2e/                   test Playwright
-reports/               audit Lighthouse (PDF)
+  lib/                 data access
+  types/               TypeScript contracts
+e2e/                   Playwright specs
+reports/               Lighthouse PDF audits
 ```
 
+
 ---
 
-## 4. AI tooling e changelog degli interventi
+## 4. AI Tooling & Engineering Log
 
-### Come ho usato l'AI
-Ho usato un assistente AI di coding (**Cline**) come strumento di produttività, sotto la mia direzione e revisione. In concreto:
+### Dual-agent workflow
 
-- **Prototipazione rapida delle classi Tailwind** per i tre breakpoint, partendo dai valori del design spec.
-- **Generazione dei test**: scaffolding di Vitest/React Testing Library (`ProductAccordion`, `Carousel`, `Header`) e dello spec Playwright, poi eseguiti e corretti a mano.
-- **Audit e misure**: script usa-e-getta (Playwright) per misurare le bounding box di ogni elemento, confrontare due build e controllare gli attributi di caricamento delle immagini.
-- **Analisi dei report Lighthouse** per individuare gli audit falliti.
+The project was built with two AI coding agents, each used for the kind of work it suited, under continuous human direction and review:
 
-**Cosa non ha deciso l'AI:** requisiti, design spec, priorità, e quali punteggi accettare (es. il contrasto del brand). Ogni modifica è stata verificata con `npm test`, `tsc --noEmit`, `npm run build` e, per il layout, con misure su più viewport. Il codice generato va comunque letto: l'AI ha anche sbagliato (vedi sotto, il confronto con `HEAD`).
+1. **Google Antigravity (Gemini 4 Carbon)** – early-stage work:
+   - workspace scaffolding and high-level task orchestration;
+   - GUI review loops: browser-assisted visual checks of components on mobile, tablet and desktop;
+   - first-pass layout: Tailwind responsive mapping and baseline DOM structure.
+2. **Claude Code / Cline** – later-stage, narrower work:
+   - surgical debugging and refactoring;
+   - authoring the test suites (Vitest + React Testing Library, Playwright E2E);
+   - Core Web Vitals work: image loading (`preload`/lazy), `sizes`, CLS, and the Next.js 16 `priority` → `preload` deprecation fix;
+   - throwaway Playwright scripts that measure the bounding box of every DOM element across viewports and compare two production builds (about 4,400 elements per comparison).
 
-### Debugging reale e correzioni
+**What stayed human-driven:** domain modelling, the data contracts, design trade-offs (e.g. keeping the Figma brand colours despite the contrast audit), the choice of which scores to accept, and root-cause judgement. Neither agent was trusted without verification: every change was checked with `npm test`, `tsc --noEmit`, `npm run build` and, for layout, with measurements at multiple viewports.
 
-| # | Problema | Causa e fix |
+**Where the tools fell short** (kept here on purpose):
+- The desktop layout regression (item 1 below) came from a CSS breakpoint token defined in the first phase. A later review compared class names, found them unchanged, and reported *no regression* until measuring real element geometry exposed it. A source diff cannot see a bug that sits in the order of the generated CSS.
+- Both phases needed guardrails: a measurable check (bounding boxes, test runs) before accepting any "done".
+
+### Engineering interventions & bug fixes
+
+| # | Issue | Root cause & resolution |
 |---|---|---|
-| 1 | **Layout "a zig-zag" su Desktop**: sezioni su assi diversi, card Kettle a 746px invece di 1106px, titoli di sezione a 736px. | **Conflitto di unità nei breakpoint di `globals.css`.** `--breakpoint-xl` era in `px`, mentre `sm`/`md`/`lg` di default in Tailwind sono in `rem`. Tailwind ordina le media query anche per unità, quindi `md:` e `lg:` venivano emessi **dopo** `xl:` e lo sovrascrivevano a ≥ 1200px (`md:max-w-[746px]` batteva `xl:max-w-[1106px]`). Fix: tutti i breakpoint in `px`. Poi ho uniformato le larghezze fisse residue (`1048px` → `1106px`, `xl:w-[540px]` → `xl:w-full`) e il `SectionHeader`. |
-| 2 | **Semantica heading**: salto da `h2` a `h4` nelle card cross-sell della PDP. | `h4` → `h3`. Il rettangolo misurato resta identico. |
-| 3 | **Metadati Home duplicati** (`page.tsx` e `layout.tsx` in conflitto). | Unica fonte nel layout. |
-| 4 | **`priority` deprecato in Next 16.** | Sostituito con `preload`, tenuto solo su hero e buy box PDP; rimossi i `priority={false}` ridondanti e `priority` sulla prima slide del carosello. |
-| 5 | **Plugin di test superfluo.** | `vite-tsconfig-paths` (installato all'inizio) rimosso: Vitest 4 risolve gli alias di `tsconfig.json` con `resolve.tsconfigPaths: true`. |
+| 1 | **Desktop layout zig-zag**: misaligned section edges, Kettle card at 746px instead of 1106px, section titles capped at 736px. | **Breakpoint unit collision in `globals.css`.** `--breakpoint-xl` was defined in `px`, while Tailwind's default `sm`/`md`/`lg` are in `rem`. Tailwind orders media queries by unit, so `md:` rules were emitted **after** `xl:` and overrode them at ≥ 1200px (`md:max-w-[746px]` beat `xl:max-w-[1106px]`). Class names matched the previous commit, so a source diff showed nothing. **Fix:** all breakpoint tokens in `px`; then aligned the leftover fixed widths (`1048px` → `1106px`, `xl:w-[540px]` → `xl:w-full`) and `SectionHeader`. |
+| 2 | **Heading hierarchy**: `h2` → `h4` skip in the PDP cross-sell cards. | `h4` → `h3`. Measured box unchanged. |
+| 3 | **Duplicated root metadata** in `page.tsx` and `layout.tsx`. | Single owner: `layout.tsx`. |
+| 4 | **`priority` deprecated in Next.js 16.** | Migrated to `preload`, kept only on the above-the-fold images; removed the redundant `priority={false}` props and the preload on the first carousel slide. |
+| 5 | **Unneeded test plugin.** | Removed `vite-tsconfig-paths`: Vitest 4 resolves `tsconfig.json` aliases natively with `resolve.tsconfigPaths: true`. |
+| 6 | **Wrong site URL in metadata.** | `metadataBase`, canonical and OpenGraph used a placeholder domain; now `https://octopus-web-steel.vercel.app`. |
 
-**Metodo di verifica del punto 1:** snapshot delle bounding box di ogni elemento a 390, 480, 767, 768, 810, 1024, 1199, 1200, 1440 e 1920 px, prima e dopo la modifica ai breakpoint. Sotto i 1200px la geometria è identica (unica differenza: il tag `h4`→`h3`).
+**How item 1 was verified:** bounding-box snapshots at 390, 480, 767, 768, 810, 1024, 1199, 1200, 1440 and 1920 px, before and after the fix. Below 1200px the geometry is identical (the only difference is the `h4` → `h3` tag).
 
-### Icone e dipendenze
-Tutte le icone sono **SVG inline**: nessun componente di `lucide-react` è importato. La dipendenza però è **ancora dichiarata in `package.json`** (inutilizzata, non pesa sul bundle perché non viene importata). Rimuoverla è una pulizia in sospeso: `npm uninstall lucide-react`.
+### Dependency housekeeping
+All icons are **inline SVGs**; no `lucide-react` component is imported. The package is **still declared in `package.json`** (unused, so it adds nothing to the bundle). Removing it is an open cleanup task: `npm uninstall lucide-react`.
 
-### Effetti collaterali noti della correzione ai breakpoint
-La correzione di `globals.css` vale per tutto il sito. A Desktop ha cambiato anche la **geometria della PDP** (es. il box prodotto passa da 476px a 618px di larghezza) e le card Best sellers passano da 1048px a 1106px (la prima slide è sull'asse, la seconda è visibile solo in parte). Le ho considerate coerenti con l'asse unico, ma vanno confrontate con il design spec.
+### Side effects of the breakpoint fix
+The `globals.css` fix applies site-wide. On desktop it also changed the **PDP layout** (e.g. the product box went from 476px to 618px wide) and widened the Best seller cards from 1048px to 1106px (the active slide now sits on the axis and the next one peeks in from the right). Both follow the unified axis; compare them against the design spec.
+
 
 ---
 
-## 5. Trade-off e sviluppi futuri
+## 5. Trade-offs & Future Roadmap
 
-### Test: simulazione vs interazione reale
-- **Component test (jsdom)**: jsdom non ha un motore di layout. Nel test del `Carousel` simulo `scrollLeft`/`scrollWidth`/`clientWidth` e lo scroll risultante da uno swipe: verifico che gli eventi touch e lo scroll aggiornino lo stato disabilitato delle frecce, **non** il gesto di swipe vero (che è nativo: `overflow-x` + `scroll-snap`). Il test è veloce (~2 s) e deterministico, ma non può validare scroll-snap o inerzia.
-- **E2E (Playwright)**: oggi copre il flusso Home → PDP → colore → accordion, su Desktop e Mobile. **Non copre ancora swipe e carosello su un touch device reale**: è il passo successivo (Playwright con `hasTouch` e gesto reale, più una scansione axe).
+### Testing: jsdom emulation vs. real gestures
+- **Component tests (jsdom):** jsdom has no layout engine. `Carousel.test.tsx` simulates `scrollLeft`, `scrollWidth` and `clientWidth` to verify that scroll and touch events update the arrow buttons' disabled state. It does **not** assert real swipe dynamics, which rely on the browser's native `overflow-x` and `scroll-snap`. The suite is fast (~2 s) and deterministic, but cannot validate momentum or snapping.
+- **End-to-end (Playwright):** covers the main flow (Home → PDP → colour variant → specifications accordion) on desktop and mobile. It does **not** yet exercise swipe on a touch device. Next step: touch emulation (`hasTouch: true`) plus an automated `axe-core` pass.
 
-### Limiti noti
-- Il link "Download manuale" è generato dallo slug (`/downloads/octopus-<slug>-manual.pdf`) ma esiste **un solo PDF** (Countertop Blender): per gli altri prodotti il link darebbe 404. Servirebbe un campo `manualUrl` in `products.json`.
-- Le ancore `#store-locator`, `#contact-us` e `#policies-terms` (store banner e footer) sono segnaposto senza destinazione.
-- I punteggi Lighthouse sono su build locale: da ripetere sul deploy Vercel.
+### Known constraints
+- The "Download manual" link is built from the product slug (`/downloads/octopus-<slug>-manual.pdf`), but only one PDF exists (Countertop Blender), so other products would return 404. This needs an explicit `manualUrl` field in `products.json`.
+- The anchors `#store-locator`, `#contact-us` and `#policies-terms` are placeholders without a destination.
+- Lighthouse scores come from a local production build; run them against the Vercel deployment too.
 
-### Sviluppi futuri
-- **Headless CMS** (Contentful / Sanity): sostituire `src/lib/products.ts` con un client del CMS, mantenendo invariati i contratti in `src/types/product.ts`. Taggare le fetch e invalidare con un webhook che chiama `revalidateTag('products', 'max')` (in Next 16 il secondo argomento, il *profile*, è richiesto). Con `cacheComponents` attivo, usare `'use cache'` + `cacheTag`.
-- **i18n** con **`next-intl`**: segmento `[locale]`, messaggi per i testi editoriali, campi localizzati nel CMS, `alternates.languages` in `generateMetadata`.
-- **SEO**: rendere descrittivo il testo visibile dei link "Learn more" (es. nome del prodotto in un `sr-only` interno al link) per portare la Home a SEO 100; aggiungere `sitemap.ts` e dati strutturati `Product` (JSON-LD) sulla PDP.
-- **Accessibilità**: allineare con il team di design i token di contrasto (footer e tag categoria) per arrivare a 100.
-- **CI**: GitHub Actions con `typecheck`, `lint`, `npm test`, E2E e Lighthouse CI con soglie.
-- **Pulizia**: rimuovere `lucide-react` e `src/types/products.ts` se confermato inutilizzato.
+### Future roadmap
+- **Headless CMS (Contentful / Sanity):** replace `src/lib/products.ts` with a CMS client, keeping the contracts in `src/types/product.ts`. Revalidate on demand through a webhook calling `revalidateTag('products', 'max')` (Next.js 16 requires the second *profile* argument); with `cacheComponents` on, use `'use cache'` and `cacheTag`.
+- **Internationalisation with `next-intl`:** a `[locale]` route segment, message catalogues for editorial copy, localised CMS fields, and `alternates.languages` in `generateMetadata`.
+- **SEO:** add the product name as screen-reader text inside the "Learn more" links to bring the Homepage to 100; add `sitemap.ts` and `Product` JSON-LD on the PDP.
+- **Design-system alignment:** agree contrast-safe values for the footer and category-tag tokens with design to reach 100 on Accessibility.
+- **CI/CD:** GitHub Actions running `typecheck`, `lint`, `npm test`, Playwright E2E and Lighthouse CI budgets.
+- **Cleanup:** `npm uninstall lucide-react` and delete the legacy `src/types/products.ts` (nothing imports it).
 
