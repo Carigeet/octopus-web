@@ -3,7 +3,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
-const SITE_URL = "https://octopus-web.vercel.app";
+const SITE_URL = "https://octopus-web-steel.vercel.app";
 const SITE_TITLE = "Octopus | Premium Home & Lifestyle Appliances";
 const SITE_DESCRIPTION =
   "Discover Octopus innovative kitchen appliances, smart home security, salon-quality hair care, and everyday accessories.";
